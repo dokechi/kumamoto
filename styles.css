@@ -1,37 +1,41 @@
 :root {
   color-scheme: light dark;
-  --bg: #f5f7f8;
-  --surface: #ffffff;
-  --surface-soft: #eef2f3;
-  --text: #182124;
-  --muted: #59666a;
-  --line: #cbd3d6;
-  --accent: #b42318;
-  --accent-dark: #8f1c13;
-  --accent-soft: #fff0ed;
-  --success-soft: #edf7f1;
-  --success-text: #14532d;
-  --focus: #0067b9;
-  --shadow: 0 16px 40px rgba(22, 45, 52, 0.08);
+  --bg: #f1f4f3;
+  --surface: #fbfcfb;
+  --surface-soft: #e8edeb;
+  --text: #24312f;
+  --muted: #596764;
+  --line: #c8d1ce;
+  --accent: #456d68;
+  --accent-dark: #2f5551;
+  --accent-hover: #365b57;
+  --accent-soft: #e2ece9;
+  --on-accent: #f7faf9;
+  --success-soft: #e8efec;
+  --success-text: #345249;
+  --focus: #2d6964;
+  --shadow: 0 16px 40px rgba(34, 63, 58, 0.08);
   --radius: 14px;
   --max: 1120px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #11191c;
-    --surface: #182226;
-    --surface-soft: #223034;
-    --text: #f0f4f5;
-    --muted: #b9c3c6;
-    --line: #425156;
-    --accent: #b9382f;
-    --accent-dark: #ff9b92;
-    --accent-soft: #3a211f;
-    --success-soft: #183227;
-    --success-text: #baf0cf;
-    --focus: #73bfff;
-    --shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    --bg: #171d1c;
+    --surface: #202826;
+    --surface-soft: #2a3432;
+    --text: #edf2f0;
+    --muted: #b8c3c0;
+    --line: #485652;
+    --accent: #426b65;
+    --accent-dark: #a9c9c3;
+    --accent-hover: #345853;
+    --accent-soft: #243a36;
+    --on-accent: #f4f8f7;
+    --success-soft: #263832;
+    --success-text: #c0d5ce;
+    --focus: #8cb9b2;
+    --shadow: 0 16px 40px rgba(7, 16, 14, 0.28);
   }
 }
 
@@ -112,7 +116,7 @@ h4 {
 
 .notice-bar {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .notice-bar__inner {
@@ -222,11 +226,11 @@ h4 {
 
 .button--primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .button--primary:hover {
-  background: var(--accent-dark);
+  background: var(--accent-hover);
 }
 
 .button--secondary {
@@ -256,7 +260,7 @@ h4 {
   padding: 3px 9px;
   border-radius: 6px;
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
   font-size: 0.8rem;
   font-weight: 800;
 }
@@ -347,7 +351,7 @@ h4 {
 
 .step--alert .step__number {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 .step h3 {
@@ -761,16 +765,18 @@ h4 {
 
   :root {
     color-scheme: light;
-    --bg: #fff;
-    --surface: #fff;
-    --text: #111;
-    --muted: #333;
-    --line: #999;
-    --accent: #8f1c13;
-    --accent-dark: #8f1c13;
-    --accent-soft: #fff;
-    --success-soft: #fff;
-    --success-text: #111;
+    --bg: #fdfdfc;
+    --surface: #fdfdfc;
+    --text: #1c201f;
+    --muted: #3f4745;
+    --line: #8c9491;
+    --accent: #315854;
+    --accent-dark: #284a47;
+    --accent-hover: #284a47;
+    --accent-soft: #fdfdfc;
+    --on-accent: #f7faf9;
+    --success-soft: #fdfdfc;
+    --success-text: #1c201f;
     --shadow: none;
   }
 
