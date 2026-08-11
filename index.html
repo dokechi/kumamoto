@@ -3,218 +3,218 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#b39b8d">
-  <meta name="description" content="2026年7月熊本地震で被災した方が、住宅修理、仮住まい、片付け、移動、保育、入浴、料金減免などの支援を探すための非公式まとめです。">
+  <meta name="theme-color" content="#f8f4ef">
+  <meta name="description" content="2026年7月熊本地震の支援情報を、復旧・施工で来ている現場の人向けと、熊本で暮らしている現地住民向けに分けて案内します。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="熊本で被災した方へ｜支援情報まとめ">
-  <meta property="og:description" content="修理代を払う前に確認。使えそうな支援から公式情報へすぐ進めます。">
-  <meta name="twitter:card" content="summary">
-  <title>熊本で被災した方へ｜支援情報まとめ</title>
-  <link rel="stylesheet" href="styles.css?v=20260811-3">
+  <meta property="og:title" content="熊本の支援情報">
+  <meta property="og:description" content="復旧・施工で来ている人と、熊本で暮らしている人。">
+  <title>熊本の支援情報</title>
+  <script>
+    // 以前の /kumamoto/#obstacle などの共有URLを壊さないため、
+    // ハッシュ付きアクセスは従来の住民向けページへ引き継ぐ。
+    if (location.hash) {
+      location.replace('./resident.html' + location.search + location.hash);
+    }
+  </script>
   <style>
-    .notice-bar__inner{justify-content:space-between}.notice-official-link{flex:none;font-weight:800;text-underline-offset:3px}.deadline-alert__label{display:inline-flex;padding:4px 9px;border:1px solid var(--accent);border-radius:999px;background:var(--surface);color:var(--accent-dark)}.hero{padding:clamp(38px,6vw,70px) 0}.first-check{padding:clamp(46px,7vw,72px) 0}.support{padding-top:clamp(52px,8vw,84px)}.filter-all-row{margin-bottom:10px}.filter--all{width:100%;min-height:52px;font-weight:850}.support-card__program{margin:5px 0 0;color:var(--muted);font-size:.78rem}.support-card__body{padding-top:14px;padding-bottom:14px}.plain-block,.benefit-block,.caution-block{padding-top:11px;padding-bottom:11px}.support-card__footer{padding-top:14px;padding-bottom:16px}.url-details{grid-column:1/-1;font-size:.78rem;color:var(--muted)}.url-details summary{width:max-content;cursor:pointer;font-weight:700}.url-details .source-url{margin-top:8px}.results-status:empty{display:none}@media(max-width:560px){.notice-bar__inner{align-items:flex-start;padding-block:9px;gap:12px}.notice-bar__inner span{font-size:.78rem}.notice-official-link{font-size:.78rem}.deadline-alert__inner{padding-block:18px}.hero{padding:34px 0}.first-check{padding:42px 0}.support{padding:48px 0 64px}.support-card__head{padding-top:20px;padding-bottom:14px}.support-card h3{font-size:1.3rem}.filter--all{text-align:center}}
+    :root{
+      --ink:#17191d;
+      --muted:#66645f;
+      --page:#fbfaf8;
+      --card:#fff;
+      --line:#dedbd6;
+      --mocha:#9c8578;
+      --mocha-soft:#f2ebe6;
+      --sage:#8fa193;
+      --sage-soft:#edf2ee;
+    }
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{
+      margin:0;
+      background:var(--page);
+      color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit}
+    .site-header{
+      height:66px;
+      display:flex;
+      align-items:center;
+      border-bottom:1px solid #e5e2dd;
+      background:rgba(255,255,255,.72);
+    }
+    .site-header__inner{
+      width:100%;
+      padding:0 28px;
+    }
+    .site-header__brand{
+      font-size:14px;
+      font-weight:850;
+      letter-spacing:-.02em;
+    }
+    main{
+      width:min(720px,calc(100% - 40px));
+      margin:0 auto;
+      padding:24px 0 74px;
+    }
+    .intro{
+      margin:0 0 20px;
+    }
+    .intro h1{
+      margin:0;
+      font-size:clamp(44px,4.3vw,64px);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      font-weight:900;
+    }
+    .intro p{
+      margin:10px 0 0;
+      font-size:17px;
+      line-height:1.45;
+      font-weight:650;
+      letter-spacing:-.02em;
+    }
+    .choice-list{
+      display:grid;
+      gap:12px;
+    }
+    .choice{
+      position:relative;
+      display:flex;
+      align-items:center;
+      min-height:296px;
+      padding:42px 72px 42px 20px;
+      overflow:hidden;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      text-decoration:none;
+      transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
+    }
+    .choice::before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:6px;
+      background:var(--accent);
+    }
+    .choice:hover{
+      transform:translateY(-1px);
+      border-color:#ccc6bf;
+      box-shadow:0 8px 24px rgba(68,56,48,.06);
+    }
+    .choice:focus-visible{
+      outline:3px solid rgba(156,133,120,.28);
+      outline-offset:3px;
+    }
+    .choice--work{--accent:var(--mocha)}
+    .choice--resident{--accent:var(--sage)}
+    .choice__content{width:100%}
+    .choice__label{
+      display:block;
+      margin:0 0 8px;
+      color:var(--accent);
+      font-size:14px;
+      line-height:1;
+      font-weight:900;
+    }
+    .choice h2{
+      margin:0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-.045em;
+      font-weight:900;
+    }
+    .choice p{
+      margin:12px 0 0;
+      font-size:16px;
+      line-height:1.55;
+      font-weight:620;
+      letter-spacing:-.015em;
+    }
+    .choice__arrow{
+      position:absolute;
+      right:28px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#5f6468;
+      font-family:Arial,sans-serif;
+      font-size:28px;
+      font-weight:400;
+    }
+    .page-note{
+      margin:20px 2px 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.7;
+    }
+    @media(max-width:600px){
+      .site-header{height:56px}
+      .site-header__inner{padding:0 18px}
+      main{
+        width:min(100% - 28px,720px);
+        padding-top:28px;
+        padding-bottom:52px;
+      }
+      .intro{margin-bottom:18px}
+      .intro h1{
+        font-size:42px;
+        line-height:1.04;
+      }
+      .intro p{
+        margin-top:9px;
+        font-size:15px;
+      }
+      .choice-list{gap:10px}
+      .choice{
+        min-height:224px;
+        padding:32px 52px 32px 18px;
+        border-radius:14px;
+      }
+      .choice::before{width:5px}
+      .choice__label{font-size:13px;margin-bottom:8px}
+      .choice h2{font-size:34px}
+      .choice p{font-size:14px;line-height:1.55}
+      .choice__arrow{right:18px;font-size:25px}
+    }
   </style>
-  <script src="app.js?v=20260811-3" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">本文へ移動</a>
-
-  <div class="notice-bar" role="note">
-    <div class="wrap notice-bar__inner">
-      <span><strong>非公式まとめ</strong> 条件・受付状況は公式情報で確認してください。</span>
-      <a class="notice-official-link" href="https://www.city.kumamoto.jp/list04828.html" target="_blank" rel="noopener noreferrer">熊本市公式 ↗</a>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__brand">熊本支援まとめ</div>
     </div>
-  </div>
+  </header>
 
-  <section class="deadline-alert" aria-labelledby="deadline-alert-title">
-    <div class="wrap deadline-alert__inner">
-      <div>
-        <p class="deadline-alert__label">8/13 締切</p>
-        <h2 id="deadline-alert-title">家の中に土砂・木などが入った人へ</h2>
-        <p>条件に合えば、熊本市が障害物を除去します。1世帯あたりの限度額は14万8,600円です。</p>
-      </div>
-      <a class="button button--secondary" href="#obstacle">対象条件を見る</a>
-    </div>
-  </section>
-
-  <main id="main">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <p class="hero__label">2026年7月熊本地震</p>
-          <h1 id="hero-title">修理代を払う前に、<br>まず確認してください。</h1>
-          <p class="hero__lead">知らずに進めると、使えなくなる支援があります。</p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#first">最初に3つ確認する</a>
-            <a class="button button--secondary" href="#support">支援から探す</a>
-          </div>
-        </div>
-
-        <aside class="urgent-box" aria-label="最優先の注意">
-          <p class="urgent-box__label">最優先</p>
-          <p class="urgent-box__title">家を修理する人へ</p>
-          <p class="urgent-box__amount">最大 <strong>75.7万円</strong></p>
-          <p>熊本市が修理業者へ支払います。すでに修理代を支払ったものは対象外です。</p>
-          <a class="text-link" href="#repair">詳しく見る</a>
-        </aside>
-      </div>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <h1 id="page-title">熊本の支援情報、</h1>
+      <p>復旧・施工で来ている人と、<br>熊本で暮らしている人。</p>
     </section>
 
-    <section class="first-check" id="first" aria-labelledby="first-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2 id="first-title">家に被害があるなら、先に3つ</h2>
-          <p>片付けや修理を進める前に確認してください。</p>
+    <nav class="choice-list" aria-label="支援情報を立場から選ぶ">
+      <a class="choice choice--work" href="./genba.html">
+        <div class="choice__content">
+          <span class="choice__label">復旧・施工</span>
+          <h2>現場の人</h2>
+          <p>熊本へ応援に来ている会社・職人向け。<br>高速代、宿泊・移動費などを見る。</p>
         </div>
-        <ol class="steps">
-          <li class="step"><span class="step__number" aria-hidden="true">1</span><div><h3>被害の写真を撮る</h3><p>家の外・中、壊れた場所の全体と近くを残します。</p></div></li>
-          <li class="step"><span class="step__number" aria-hidden="true">2</span><div><h3>り災証明書を申請する</h3><p>多くの支援で被害程度の確認に使います。</p><a href="https://www.city.kumamoto.jp/kiji0032451/index.html" target="_blank" rel="noopener noreferrer">熊本市の申請案内</a></div></li>
-          <li class="step step--alert"><span class="step__number" aria-hidden="true">3</span><div><h3>修理代を払う前に相談</h3><p>応急修理は支払い後だと対象になりません。</p><a href="tel:0963282449">住宅政策課 096-328-2449</a></div></li>
-        </ol>
-      </div>
-    </section>
+        <span class="choice__arrow" aria-hidden="true">›</span>
+      </a>
 
-    <section class="support" id="support" aria-labelledby="support-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <h2 id="support-title">今、一番困っていることは？</h2>
-          <p>選ぶと、関係しそうな支援だけを表示します。</p>
+      <a class="choice choice--resident" href="./resident.html">
+        <div class="choice__content">
+          <span class="choice__label">被災者支援</span>
+          <h2>現地住民の人</h2>
+          <p>熊本で暮らしている被災した人向け。<br>家の修理、仮住まい、生活の支援を見る。</p>
         </div>
+        <span class="choice__arrow" aria-hidden="true">›</span>
+      </a>
+    </nav>
 
-        <div class="filter-all-row">
-          <button class="filter filter--all" type="button" data-filter="all" aria-pressed="false">すべての支援を見る（17件）</button>
-        </div>
-        <div class="filters" role="group" aria-label="支援情報の絞り込み">
-          <button class="filter" type="button" data-filter="repair" aria-pressed="false">家を直したい</button>
-          <button class="filter" type="button" data-filter="housing" aria-pressed="false">家に住めない</button>
-          <button class="filter" type="button" data-filter="cleanup" aria-pressed="false">片付けたい</button>
-          <button class="filter" type="button" data-filter="car" aria-pressed="false">車が必要</button>
-          <button class="filter" type="button" data-filter="child" aria-pressed="false">子どもを預けたい</button>
-          <button class="filter" type="button" data-filter="bath" aria-pressed="false">お風呂</button>
-          <button class="filter" type="button" data-filter="payments" aria-pressed="false">支払いがきつい</button>
-          <button class="filter" type="button" data-filter="loan" aria-pressed="false">住宅ローン</button>
-        </div>
-
-        <p class="results-status" id="results-status" aria-live="polite">困りごとを選んでください。全部確認したい場合は、一番上の「すべての支援を見る」を押してください。</p>
-
-        <div class="support-grid" id="support-grid">
-          <article class="support-card support-card--urgent" id="obstacle" data-categories="cleanup repair housing">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・8月13日締切</p><h3>家の中に土砂・木が入った</h3><p class="support-card__program">制度名：被災住宅の障害物除去</p></div>
-            <div class="support-card__body">
-              <div class="plain-block"><h4>こんな人</h4><p>土砂や木が家に入り、そのままでは暮らせず、自分で除去するのが難しい人。</p></div>
-              <div class="benefit-block"><h4>どうなる？</h4><p>生活に必要な場所を除去。上限<strong>14万8,600円</strong>です。</p></div>
-              <div class="caution-block"><h4>注意</h4><p>対象住家などに条件があります。り災証明書・被害写真などが必要です。</p></div>
-              <p class="deadline">申請期限: 2026年8月13日（木）</p><p class="phone-line"><a href="tel:0963282475">土木総務課 096-328-2475</a></p>
-            </div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00366029/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00366029/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00366029/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="car cleanup">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・要予約</p><h3>片付けに使う車がない</h3><p class="support-card__program">制度名：災害サポート・レンタカー</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>被災後の生活や片付けで車が必要な人。被災した法人・団体も対象です。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>乗用車は最長<strong>2週間</strong>、軽・小型トラックは最長<strong>3日間</strong>無料。</p></div><div class="caution-block"><h4>注意</h4><p>事前予約が必要。ガソリン代は自己負担です。</p></div><p class="deadline">貸出期間: 2026年12月25日まで</p><p class="phone-line"><a href="tel:05057994740">日本カーシェアリング協会 050-5799-4740</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372216/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372216/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372216/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="repair housing cleanup payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・詳細は後日公表</p><h3>家を取り壊すしかない</h3><p class="support-card__program">制度名：被災家屋等の公費解体</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>半壊以上の家屋・事業所などを所有する個人や中小企業者。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>熊本市が解体・撤去。自費解体でも費用償還の対象になる場合があります。</p></div><div class="caution-block"><h4>注意</h4><p>申請方法・市の費用基準は未公表。自費で進めるなら写真・契約書・領収証などを保管してください。</p></div><p class="phone-line"><a href="tel:0963282430">公費解体プロジェクトチーム 096-328-2430</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372403/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372403/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372403/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="cleanup payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・地震で壊れたもの</p><h3>壊れた家具・家電を捨てたい</h3><p class="support-card__program">制度名：大型ごみ・家電の無料回収</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>地震で壊れた家具、テレビ、冷蔵庫、洗濯機、エアコンなどを処分したい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>事前申込みで<strong>無料回収</strong>。災害ごみの持込みも当面、処理手数料が免除されます。</p></div><div class="caution-block"><h4>注意</h4><p>地震が原因でないごみや事業所ごみは扱いが異なります。</p></div><p class="phone-line"><a href="tel:0570005374">ごみゼロコール 0570-00-5374</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372079/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372079/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372079/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="cleanup">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・派遣依頼を受付中</p><h3>片付けを一人ではできない</h3><p class="support-card__program">制度名：片付けボランティア</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>熊本市内で被災し、自力で片付けるのが難しい世帯。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>家の内外の片付け、清掃、家具の搬出などを手伝ってもらえます。</p></div><div class="caution-block"><h4>注意</h4><p>重機、解体・修繕、高所など危険な作業は対象外。現地確認後に支援可否が決まります。</p></div><p class="phone-line"><a href="tel:08015351141">派遣要請 080-1535-1141</a>・<a href="tel:08015320617">080-1532-0617</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372117/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372117/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372117/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="child payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・未就学児</p><h3>子どもを預けたい</h3><p class="support-card__program">制度名：無料の一時預かり保育</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>普段の保育所が使えない、または片付けなどで一時的に家庭保育が難しい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>対象施設で一時預かりを<strong>無料</strong>で利用できます。</p></div><div class="caution-block"><h4>注意</h4><p>事前申込みが必要。施設の受入状況によって利用できない場合があります。</p></div><p class="phone-line"><a href="tel:0963282568">保育幼稚園課 096-328-2568</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372368/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372368/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372368/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・受付準備中</p><h3>服・布団などを失った</h3><p class="support-card__program">制度名：被服・寝具など生活必需品の支給</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>床上浸水・半壊・全壊で、生活必需品を失い日常生活が難しい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>被服、寝具、紙おむつ、調理器具などが限度額の範囲で支給されます。</p></div><div class="caution-block"><h4>注意</h4><p>8月10日時点では受付準備中。開始後の方法は熊本市の最新情報で確認してください。</p></div><p class="phone-line"><a href="tel:0963282340">健康福祉政策課 096-328-2340</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372110/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="bath payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・協力施設</p><h3>お風呂が使えない</h3><p class="support-card__program">制度名：無料入浴支援</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>避難所・車中泊中、または断水や設備被害で自宅のお風呂が使えない人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>協力施設で<strong>無料で入浴</strong>できます。</p></div><div class="caution-block"><h4>注意</h4><p>本人確認書類、タオル、着替えを持参。利用できる施設は公式情報で確認してください。</p></div><p class="phone-line"><a href="tel:0963643187">生活衛生課 096-364-3187</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372110/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="housing">
-            <div class="support-card__head"><p class="support-card__scope">熊本市・二次避難</p><h3>避難所・車中泊がつらい</h3><p class="support-card__program">制度名：ホテル・旅館などへの宿泊支援</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>避難所、車中泊、在宅避難での生活が難しい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>熊本市が宿泊施設を調整。目安は<strong>1週間〜10日程度</strong>です。</p></div><div class="caution-block"><h4>注意</h4><p>高齢者、障がい者、妊産婦、乳幼児のいる世帯などが優先。保健師か避難所職員へ相談してください。</p></div><p class="phone-line"><a href="tel:0963282340">宿泊支援チーム 096-328-2340</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372110/</p></details></div>
-          </article>
-
-          <article class="support-card support-card--urgent" id="repair" data-categories="repair payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市</p><h3>壊れた家を修理したい</h3><p class="support-card__program">制度名：被災した住宅の応急修理</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>準半壊以上で、直せば元の家に住み続けられる人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>半壊以上は最大<strong>75万7,000円</strong>、準半壊は最大<strong>36万7,000円</strong>。市が業者へ支払います。</p></div><div class="caution-block"><h4>注意</h4><p><strong>すでに修理代を支払ったものは対象外。</strong>資力などの条件があり、修理前後の写真も必要です。</p></div><p class="deadline">掲載時の完了期限: 2026年10月27日</p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372104/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372104/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372104/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="housing payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市</p><h3>家に住めない。賃貸を借りたい</h3><p class="support-card__program">制度名：賃貸型応急住宅（みなし仮設住宅）</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>家に長く住めず、自分だけでは次の住まいを確保するのが難しい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>条件に合う民間賃貸を市が借り上げ、家賃・共益費などを一定範囲で負担します。</p></div><div class="caution-block"><h4>注意</h4><p>人と物件の両方に条件があります。すでに契約した賃貸でも切り替えられる場合があります。</p></div><p class="phone-line"><a href="tel:0963282989">住宅政策課 096-328-2989</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/list04828.html" target="_blank" rel="noopener noreferrer">熊本市の地震支援情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/list04828.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/list04828.html</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="housing payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市</p><h3>家に住めない。市営住宅も考えたい</h3><p class="support-card__program">制度名：市営住宅の一時提供</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>家が半壊以上で、その家に住み続けられない人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p><strong>家賃・駐車場使用料・敷金が免除</strong>。原則6か月、最長1年まで更新できます。</p></div><div class="caution-block"><h4>注意</h4><p>共益費・光熱水費は自己負担。ペット不可。空室状況は変わります。</p></div><p class="phone-line"><a href="tel:0963282461">市営住宅課 096-328-2461</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372210/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372210/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372210/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="payments">
-            <div class="support-card__head"><p class="support-card__scope">対象市町村</p><h3>電気代の支払いがきつい</h3><p class="support-card__program">制度名：九州電力の特別措置</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>災害救助法の対象市町村で被災した九州電力の利用者。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>支払期限の延長、基本料金・不使用期間の料金などが免除される場合があります。</p></div><div class="caution-block"><h4>注意</h4><p><strong>自動適用ではありません。</strong>九電ネクストへ申込みが必要です。</p></div></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.kyuden.co.jp/press/2026/h260729-1.html" target="_blank" rel="noopener noreferrer">九州電力の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.kyuden.co.jp/press/2026/h260729-1.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">kyuden.co.jp/press/2026/h260729-1.html</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="payments">
-            <div class="support-card__head"><p class="support-card__scope">対象市町村</p><h3>NHK受信料を払っている</h3><p class="support-card__program">制度名：NHK受信料の免除</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>対象区域で、半壊・半焼・床上浸水以上の被害を受けた建物の契約者。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>2026年7月・8月の<strong>2か月分が免除</strong>されます。</p></div><div class="caution-block"><h4>注意</h4><p>り災証明書がある場合は、NHKのページから免除申請を確認してください。</p></div></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.nhk-cs.jp/notice/menjo-info/menjo_r08-0728kumamoto.html" target="_blank" rel="noopener noreferrer">NHKの公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.nhk-cs.jp/notice/menjo-info/menjo_r08-0728kumamoto.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">nhk-cs.jp/notice/menjo-info/menjo_r08-0728kumamoto.html</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="loan payments">
-            <div class="support-card__head"><p class="support-card__scope">被災した個人</p><h3>住宅ローンの返済がきつい</h3><p class="support-card__program">制度名：住宅ローンなどの相談</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>被災して、住宅ローンなど今ある借入れの返済が難しい人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>金融機関へ<strong>返済条件の変更、債務の免除・減額</strong>を申し出られます。</p></div><div class="caution-block"><h4>注意</h4><p>必ず免除・減額される制度ではありません。まず借入先へ相談してください。</p></div><p class="phone-line"><a href="tel:0120156811">金融庁相談ダイヤル 0120-156811</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.fsa.go.jp/ordinary/earthquake202607/press.html" target="_blank" rel="noopener noreferrer">金融庁の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.fsa.go.jp/ordinary/earthquake202607/press.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">fsa.go.jp/ordinary/earthquake202607/press.html</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市</p><h3>税・保険料・水道の支払いがきつい</h3><p class="support-card__program">制度名：税・保険料・水道などの減免・猶予</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>被災して、市税、国保、年金、介護保険、水道などの負担が重い人。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>条件に合えば、<strong>減免・免除・還付・支払い猶予</strong>を受けられる場合があります。</p></div><div class="caution-block"><h4>注意</h4><p>制度ごとに対象・期限・窓口が違います。熊本市の一覧で確認してください。</p></div></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html#5" target="_blank" rel="noopener noreferrer">熊本市の減免一覧を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html#5">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00372110/</p></details></div>
-          </article>
-
-          <article class="support-card" data-categories="payments">
-            <div class="support-card__head"><p class="support-card__scope">熊本市</p><h3>家が壊れた・大きなけがをした</h3><p class="support-card__program">制度名：災害見舞金</p></div>
-            <div class="support-card__body"><div class="plain-block"><h4>こんな人</h4><p>全壊・半壊・床上浸水した世帯、または1か月以上の療養が必要な重傷者。</p></div><div class="benefit-block"><h4>どうなる？</h4><p>全壊など<strong>5万円</strong>、半壊など<strong>3万円</strong>、床上浸水<strong>1万円</strong>、重傷<strong>3万円</strong>。</p></div><div class="caution-block"><h4>注意</h4><p>り災証明書や診断書、振込口座が分かるものなどを用意して区役所福祉課へ申請します。</p></div><p class="phone-line"><a href="tel:0963282340">健康福祉政策課 096-328-2340</a></p></div>
-            <div class="support-card__footer"><a class="official-link" href="https://www.city.kumamoto.jp/kiji00350776/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a><button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00350776/index.html">URLをコピー</button><details class="url-details"><summary>URLを表示</summary><p class="source-url">city.kumamoto.jp/kiji00350776/</p></details></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="final-note" aria-labelledby="final-title">
-      <div class="wrap final-note__inner"><div><h2 id="final-title">迷ったら、熊本市へ</h2><p>どの制度が使えるか分からないときは、支援制度一覧か市のコールセンターで確認できます。</p></div><div class="final-note__actions"><a class="button button--primary" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">支援制度の一覧</a><a class="button button--secondary" href="tel:0963341500">096-334-1500</a><span class="hours">年中無休 8時から20時</span></div></div>
-    </section>
+    <p class="page-note">非公式のまとめです。制度の条件・受付状況は、各ページから公式情報を確認してください。</p>
   </main>
-
-  <footer class="site-footer"><div class="wrap site-footer__inner"><div><p class="site-footer__title">熊本支援情報</p><p>2026年8月11日確認</p></div><p class="disclaimer">このサイトは行政機関の公式サイトではありません。情報を分かりやすく探すための入口です。対象条件、期限、必要書類、受付状況は変更される場合があります。申込みの前に、必ず公式サイトや担当窓口で最新情報を確認してください。</p></div></footer>
-
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>URLをコピーしました</div>
 </body>
 </html>

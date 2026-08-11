@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>熊本へ復旧工事に来ている人へ</title>
+<meta name="description" content="熊本へ復旧・仮設住宅などの施工に入る会社や現場の人向け。高速代、遠方作業員の宿泊・移動費、被災住宅の修理制度を簡単に確認できます。">
+<style>
+:root{
+  --text:#2F2A27;
+  --muted:#756860;
+  --bg:#F7F3EE;
+  --white:#FFFFFF;
+  --line:#E6DDD5;
+
+  --hero:#B39B8D;
+  --hero-accent:#D8C8BD;
+
+  --primary:#9C8578;
+  --primary-strong:#8D776C;
+  --primary-soft:#F2ECE7;
+
+  --info:#9A867A;
+  --info-soft:#F4EEEA;
+
+  --success:#8FA193;
+  --success-soft:#EEF3EF;
+
+  --caution:#B39A82;
+  --caution-soft:#F8F2EC;
+
+  --neutral-soft:#F1EBE5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+  line-height:1.7;
+}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 72px}
+
+.hero{
+  background:linear-gradient(180deg, #B8A295 0%, #AD9688 100%);
+  color:#fff;
+  border-bottom:4px solid var(--hero-accent);
+}
+.hero .wrap{padding-top:28px;padding-bottom:30px}
+.kicker{
+  display:inline-block;
+  padding:6px 11px;
+  margin-bottom:12px;
+  background:rgba(255,255,255,.20);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.28);
+}
+h1{
+  margin:0;
+  font-size:clamp(29px,7vw,43px);
+  line-height:1.22;
+  letter-spacing:-.03em;
+}
+.hero p{
+  margin:14px 0 0;
+  font-size:16px;
+  color:#F6F3F0;
+}
+.date{
+  margin-top:9px !important;
+  color:#ECE3DC !important;
+  font-size:12px !important;
+}
+
+.intro{
+  margin:24px 0 12px;
+  font-size:20px;
+  font-weight:900;
+  line-height:1.45;
+}
+.intro small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:500;
+}
+
+.menu{display:grid;gap:12px}
+.menu a{
+  display:block;
+  text-decoration:none;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:18px 16px;
+  box-shadow:0 3px 12px rgba(111,95,84,.05);
+}
+.menu .top{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:4px;
+  font-size:18px;
+  font-weight:900;
+}
+.icon{font-size:26px;line-height:1}
+.arrow{
+  display:block;
+  padding-left:37px;
+  color:var(--primary-strong);
+  font-size:17px;
+  font-weight:900;
+}
+.hint{
+  display:block;
+  padding-left:37px;
+  margin-top:3px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.note{
+  margin:16px 0 30px;
+  padding:14px 15px;
+  background:var(--neutral-soft);
+  border:1px solid var(--line);
+  border-radius:12px;
+  font-size:13px;
+}
+.note b{color:var(--text)}
+.pay-note{
+  margin:14px 0 12px;
+  padding:14px 15px;
+  background:#EEE7E1;
+  border:1px solid var(--line);
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.65;
+}
+.pay-note strong{
+  display:block;
+  margin-bottom:3px;
+  font-size:15px;
+}
+.quick-label{
+  display:inline-block;
+  margin-bottom:8px;
+  padding:4px 9px;
+  border-radius:999px;
+  background:#ECE3DC;
+  color:#755F53;
+  font-size:12px;
+  font-weight:900;
+}
+
+.card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  margin:17px 0 24px;
+  box-shadow:0 4px 16px rgba(111,95,84,.05);
+}
+.card-head{
+  padding:18px 17px 16px;
+  border-bottom:1px solid var(--line);
+  background:#FCFAF8;
+}
+.card-head .eyebrow{
+  font-size:12px;
+  font-weight:900;
+  color:var(--muted);
+}
+.card h2{
+  margin:5px 0 0;
+  font-size:25px;
+  line-height:1.35;
+  letter-spacing:-.02em;
+}
+.card-body{padding:17px}
+
+.answer,.who,.caution{
+  margin:0 0 12px;
+  padding:15px;
+  border-radius:14px;
+}
+.answer{background:var(--success-soft)}
+.who{background:var(--info-soft)}
+.caution{background:var(--caution-soft)}
+
+.small{
+  display:block;
+  margin-bottom:4px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.04em;
+}
+.answer .small{color:#73877A}
+.who .small{color:#8A756A}
+.caution .small{color:#9C816B}
+
+.answer strong{
+  display:block;
+  font-size:22px;
+  line-height:1.45;
+}
+.answer{
+  border:1px solid #DDE8E0;
+}
+.who p,.caution p{margin:0}
+.who p{font-weight:800}
+ul{margin:7px 0 0;padding-left:1.25em}
+li{margin:4px 0}
+
+.details{
+  margin-top:14px;
+  border-top:1px dashed #D8CEC5;
+  padding-top:13px;
+}
+details{
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#FCFAF7;
+  overflow:hidden;
+}
+summary{
+  cursor:pointer;
+  padding:12px 13px;
+  font-weight:900;
+}
+.detail-inner{
+  padding:0 13px 13px;
+  font-size:13px;
+  color:#57504B;
+}
+
+.ask-box{
+  margin:14px 0 0;
+  padding:15px;
+  background:#F4EFEA;
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.ask-box .ask-title{
+  display:block;
+  margin-bottom:8px;
+  font-size:13px;
+  font-weight:900;
+  color:#715E54;
+}
+.ask-box p{
+  margin:8px 0 0;
+  padding:10px 11px;
+  background:#fff;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.65;
+}
+.badge{
+  display:inline-block;
+  margin-top:9px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#E7EEE9;
+  color:#667D6F;
+  font-size:12px;
+  font-weight:900;
+}
+
+.official{margin-top:14px}
+.btn{
+  display:block;
+  width:100%;
+  text-decoration:none;
+  text-align:center;
+  padding:14px 12px;
+  background:var(--primary-strong);
+  color:#fff;
+  border-radius:11px;
+  font-weight:900;
+}
+.url{
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  line-height:1.45;
+  color:#80736B;
+  word-break:break-all;
+  overflow-wrap:anywhere;
+}
+
+.other{
+  margin:30px 0 0;
+  padding:16px 16px;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+}
+.other h3{margin:0 0 8px;font-size:16px}
+.other p{margin:0 0 10px;font-size:13px;color:#5F5752}
+.other a{color:var(--primary-strong);font-weight:800;word-break:break-all}
+
+.last{
+  margin-top:28px;
+  padding:18px 16px;
+  background:#A89486;
+  color:#fff;
+  border-radius:16px;
+}
+.last h2{margin:0 0 10px;font-size:20px}
+.last ol{margin:0;padding-left:1.35em}
+.last li{margin:7px 0}
+
+footer{
+  margin-top:25px;
+  font-size:12px;
+  color:#6F665F;
+}
+
+@media(max-width:520px){
+  .hero .wrap{padding-top:24px;padding-bottom:25px}
+  .card h2{font-size:22px}
+  .answer strong{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">2026年7月 熊本地震</div>
+    <h1>熊本へ復旧工事・仮設住宅の施工に<br>来ている人へ</h1>
+    <p>知らずに会社負担しているお金、ありませんか？</p>
+    <p class="date">情報確認日：2026年8月10日</p>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="intro">
+    <span class="quick-label">まず3秒で確認</span><br>
+    あなたの現場は、どれですか？
+    <small>制度名は知らなくて大丈夫です。近いものを押してください。</small>
+  </div>
+
+  <div class="pay-note">
+    <strong>先にひとつだけ。</strong>
+    ほとんどは、作業員本人に現金が出る制度ではありません。<br>
+    <b>会社・元請を通して、現場にかかる負担を減らせる仕組み</b>です。
+  </div>
+
+  <nav class="menu">
+    <a href="#highway">
+      <span class="top"><span class="icon">🚗</span>車で熊本へ来た</span>
+      <span class="arrow">高速代 → 無料になるかも</span>
+      <span class="hint">自治体などの要請で、人・資材を運ぶ車両</span>
+    </a>
+    <a href="#stay">
+      <span class="top"><span class="icon">👷</span>遠方から応援に来た</span>
+      <span class="arrow">宿泊・移動費 → 下請でも対象かも</span>
+      <span class="hint">仮設住宅など。対象工事か元請に確認</span>
+    </a>
+    <a href="#repair">
+      <span class="top"><span class="icon">🔧</span>被災した家を直している</span>
+      <span class="arrow">修理代 → 市が払う場合あり</span>
+      <span class="hint">配管・トイレ・給湯器なども対象になり得ます</span>
+    </a>
+  </nav>
+
+  <div class="note">
+    <b>大事：</b>「熊本へ仕事に来た」だけで、自動的に使えるわけではありません。
+    各項目で、<b>自分が対象になりそうか → 注意点 → 公式条件</b>まで確認できます。
+  </div>
+
+  <article class="card" id="highway">
+    <div class="card-head">
+      <div class="eyebrow">🚗 車で熊本へ来た</div>
+      <h2>高速代が無料になる場合があります</h2>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>条件を満たせば、高速道路の料金が無料。</strong>
+      </div>
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>自治体などからの要請で、復旧のために人や資材を熊本へ運んでいる会社・車両。</p>
+      </div>
+      <div class="caution">
+        <span class="small">ここだけ注意</span>
+        <p><b>普通に熊本で仕事をするだけでは対象になりません。</b><br>
+        「災害派遣等従事車両証明書」など、事前の手続きが必要です。</p>
+      </div>
+      <div class="details">
+        <details>
+          <summary>もう少し詳しく見る</summary>
+          <div class="detail-inner">
+            <ul>
+              <li>被災地の復旧・復興のため、人員や物資等を輸送する車両が対象になり得ます。</li>
+              <li>公的機関等の派遣要請に基づく証明書が必要です。</li>
+              <li>無料措置を受ける際は、ETCではなく指定された料金所レーンを利用します。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="official">
+        <a class="btn" href="https://www.w-nexco.co.jp/emc/emcpdfs/20260730195538-01.pdf" target="_blank" rel="noopener">公式サイトで条件を見る</a>
+        <span class="url">https://www.w-nexco.co.jp/emc/emcpdfs/20260730195538-01.pdf</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" id="stay">
+    <div class="card-head">
+      <div class="eyebrow">👷 遠方から応援に来た</div>
+      <h2>下請でも、宿泊・移動費などが対象になり得ます</h2>
+      <span class="badge">「下請け次数は問わない」と県の運用に明記</span>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>遠方から人を呼ぶために増えた費用を、工事費の設計変更に反映できる場合があります。</strong>
+        <ul>
+          <li>ホテル・旅館の宿泊費</li>
+          <li>アパートなどの借上費</li>
+          <li>現場までの送迎費・燃料費</li>
+          <li>赴任手当・帰省旅費</li>
+          <li>交通費</li>
+          <li>条件により早出・残業時の食事補助</li>
+        </ul>
+      </div>
+
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>熊本県土木部の対象工事などで、近くでは人を確保できず、遠方から実際に施工する作業員を呼んでいる場合。</p>
+        <ul>
+          <li>会社・支店から現場まで30km以上、または移動60分以上が目安</li>
+          <li>普通作業員、配管工、大工、電工、とび工、重機オペレーターなどが対象例</li>
+          <li><b>下請けの何次かは問いません</b></li>
+        </ul>
+      </div>
+
+      <div class="caution">
+        <span class="small">仮設住宅の現場なら、ここが重要</span>
+        <p><b>「仮設住宅を作っている＝自動的に対象」ではありません。</b><br>
+        今回の工事契約がこの制度の対象になっているか、元請側で特記仕様書や発注条件の確認が必要です。</p>
+      </div>
+
+      <div class="details">
+        <details>
+          <summary>もう少し詳しく見る</summary>
+          <div class="detail-inner">
+            <ul>
+              <li>県の資料では「別途の現金支給」ではなく、受注者と発注者の協議による設計変更として扱います。</li>
+              <li>領収書・宿泊者ごとの宿泊費資料・燃料費・高速道路利用料・帰省旅費など、実際に支払ったことを確認できる資料が重要です。</li>
+              <li>現場代理人・監理（主任）技術者・事務員などは、この制度上の「労働者」の対象から外れる扱いがあります。</li>
+              <li>宿泊費には県の運用上の上限額がありますが、妥当性を証明できる場合の扱いも定められています。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="ask-box">
+        <span class="ask-title">元請に聞くなら、この2つだけ</span>
+        <p>① 今回の工事は「地域外からの労働者確保に要する間接費の設計変更」の対象ですか？</p>
+        <p>② うちの作業員の宿泊費・帰省旅費・送迎費・高速代なども、実績として上げられますか？</p>
+      </div>
+
+      <div class="official">
+        <a class="btn" href="https://www.pref.kumamoto.jp/soshiki/100/50366.html" target="_blank" rel="noopener">熊本県の公式ページを見る</a>
+        <span class="url">https://www.pref.kumamoto.jp/soshiki/100/50366.html</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" id="repair">
+    <div class="card-head">
+      <div class="eyebrow">🔧 被災した家を直している</div>
+      <h2>その修理代、市が業者へ払う制度があります</h2>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>制度対象なら、熊本市が修理業者へ修理代を支払います。</strong>
+        <ul>
+          <li>半壊以上：上限 75万7,000円</li>
+          <li>準半壊：上限 36万7,000円</li>
+        </ul>
+      </div>
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>熊本市で、地震で壊れた住宅の修理を頼まれた業者。</p>
+        <ul>
+          <li>配管</li><li>トイレ</li><li>浴槽</li><li>給湯器</li><li>屋根・外壁など</li>
+        </ul>
+      </div>
+      <div class="caution">
+        <span class="small">ここだけ注意</span>
+        <p><b>工事前に制度確認。</b><br>
+        被災者が修理代をすでに全額支払っていると、対象外になるためです。</p>
+      </div>
+      <div class="details">
+        <details>
+          <summary>施工前に知っておくこと</summary>
+          <div class="detail-inner">
+            <ul>
+              <li>施工会社への補助金ではなく、被災者が利用する「住宅の応急修理」です。</li>
+              <li>施工前・施工中・施工後の写真が重要です。</li>
+              <li>熊本市から施工業者への支払いには時間がかかる場合があります。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="official">
+        <a class="btn" href="https://www.city.kumamoto.jp/kiji00372104/index.html" target="_blank" rel="noopener">熊本市の公式ページを見る</a>
+        <span class="url">https://www.city.kumamoto.jp/kiji00372104/index.html</span>
+      </div>
+    </div>
+  </article>
+
+  <section class="other">
+    <h3>会社側でもう1つ確認：遠方から資材を持ってきている</h3>
+    <p>現地で資材を確保できず、遠方から調達して運搬費などが増えた場合は、「遠隔地からの建設資材調達に係る設計変更」の運用があります。対象工事・対象資材かは元請や発注者へ確認してください。</p>
+    <a href="https://www.pref.kumamoto.jp/soshiki/100/50366.html" target="_blank" rel="noopener">熊本県の公式情報を見る</a>
+    <div class="url">https://www.pref.kumamoto.jp/soshiki/100/50366.html</div>
+  </section>
+
+  <section class="other">
+    <h3>特殊ケース：復旧資材を自社車両で有償運送する</h3>
+    <p>通常の貨物運送だけでは復旧資材の輸送が足りない場合、自家用車による有償運送が例外的に認められるケースがあります。誰でも使える制度ではないため、トップの項目とは分けています。</p>
+    <a href="https://www.pref.kumamoto.jp/soshiki/98/274992.html" target="_blank" rel="noopener">熊本県の公式情報を見る</a>
+    <div class="url">https://www.pref.kumamoto.jp/soshiki/98/274992.html</div>
+  </section>
+
+  <section class="last">
+    <h2>現場に来ている会社が今やること</h2>
+    <ol>
+      <li>元請に「今回の工事は労働者確保の設計変更対象か」を確認</li>
+      <li>宿泊・高速・燃料・帰省などの領収書を捨てない</li>
+      <li>誰が、どこから、何日来ているかを残す</li>
+      <li>資材も遠方調達しているなら、その費用も確認する</li>
+    </ol>
+  </section>
+
+  <footer>
+    このページは「自分に関係がありそうか」を判断するための簡易まとめです。
+    正式な対象条件・期限・申請方法は、必ず各公式ページや発注者・元請へ確認してください。特に建設型応急住宅（仮設住宅）は契約形態が通常工事と異なる場合があるため、このページだけで適用可否を判断しないでください。
+  </footer>
+</main>
+</body>
+</html>
