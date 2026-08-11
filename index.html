@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#b42318">
-  <meta name="description" content="2026年7月熊本地震で被災した方が、住宅修理、仮住まい、料金減免、住宅ローンなどの支援を探すための非公式まとめです。">
+  <meta name="theme-color" content="#b39b8d">
+  <meta name="description" content="2026年7月熊本地震で被災した方が、住宅修理、仮住まい、片付け、移動、保育、入浴、料金減免などの支援を探すための非公式まとめです。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="熊本で被災した方へ｜支援情報まとめ">
   <meta property="og:description" content="修理代を払う前に確認。使えそうな支援から公式情報へすぐ進めます。">
   <meta name="twitter:card" content="summary">
   <title>熊本で被災した方へ｜支援情報まとめ</title>
-  <link rel="stylesheet" href="styles.css?v=20260811-1">
+  <link rel="stylesheet" href="styles.css?v=20260811-2">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -29,6 +29,17 @@
       <a class="header-link" href="https://www.city.kumamoto.jp/list04828.html" target="_blank" rel="noopener noreferrer">熊本市の地震情報</a>
     </div>
   </header>
+
+  <section class="deadline-alert" aria-labelledby="deadline-alert-title">
+    <div class="wrap deadline-alert__inner">
+      <div>
+        <p class="deadline-alert__label">申請期限が迫っています</p>
+        <h2 id="deadline-alert-title">被災住宅の障害物除去は、8月13日（木）まで</h2>
+        <p>住家内の土石や竹木などで生活できず、自力・自己資金での除去が難しい方が対象です。1世帯あたりの限度額は14万8,600円です。</p>
+      </div>
+      <a class="button button--secondary" href="#obstacle">対象条件を見る</a>
+    </div>
+  </section>
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
@@ -98,13 +109,262 @@
           <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">すべて</button>
           <button class="filter" type="button" data-filter="repair" aria-pressed="false">家を直したい</button>
           <button class="filter" type="button" data-filter="housing" aria-pressed="false">家に住めない</button>
+          <button class="filter" type="button" data-filter="cleanup" aria-pressed="false">片付けたい</button>
+          <button class="filter" type="button" data-filter="car" aria-pressed="false">車がない</button>
+          <button class="filter" type="button" data-filter="child" aria-pressed="false">子どもを預けたい</button>
+          <button class="filter" type="button" data-filter="bath" aria-pressed="false">お風呂が使えない</button>
           <button class="filter" type="button" data-filter="payments" aria-pressed="false">支払いがきつい</button>
           <button class="filter" type="button" data-filter="loan" aria-pressed="false">住宅ローンがある</button>
         </div>
 
-        <p class="results-status" id="results-status" aria-live="polite">8件の支援を表示しています</p>
+        <p class="results-status" id="results-status" aria-live="polite">17件の支援を表示しています</p>
 
         <div class="support-grid" id="support-grid">
+          <article class="support-card support-card--urgent" id="obstacle" data-categories="cleanup repair housing">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・8月13日締切</p>
+              <h3>被災住宅の障害物除去</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>住家内に入った土石や竹木などで一時的に住めず、自力や自己資金での除去が難しい人。対象住家などにも要件があります。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>日常生活に最低限必要な場所の障害物を除去します。1世帯あたりの限度額は<strong>14万8,600円</strong>です。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>熊本市が施工業者へ直接支払います。除去後の室内清掃や消毒は対象外です。り災証明書と被害写真などが必要です。</p>
+              </div>
+              <p class="deadline">申請期限: 2026年8月13日（木）</p>
+              <p class="phone-line"><a href="tel:0963282475">土木総務課 096-328-2475</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00366029/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00366029/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00366029/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="car cleanup">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・要予約</p>
+              <h3>災害サポート・レンタカー</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>被災後の日常生活や片付けで車が必要な人。被災した法人・団体や、支援活動を行う団体も申し込めます。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>乗用車は最長<strong>2週間</strong>、軽・小型トラックは最長<strong>3日間</strong>、無料で借りられます。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>事前予約が必要です。ガソリン代は自己負担。運転免許証と、り災証明の申請控えや被害写真などを用意します。</p>
+              </div>
+              <p class="deadline">貸出期間: 2026年12月25日まで</p>
+              <p class="phone-line"><a href="tel:05057994740">日本カーシェアリング協会 050-5799-4740</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372216/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372216/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372216/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="repair housing cleanup payments">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・詳細は後日公表</p>
+              <h3>被災家屋等の公費解体</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>個人や中小企業者が所有し、半壊、中規模半壊、大規模半壊、全壊の被害を受けた家屋や事業所などの所有者。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>所有者の申請に基づき、熊本市が代わって解体・撤去します。すでに自費で解体した場合も、費用償還の対象となることがあります。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>申請方法や市の費用基準は未公表です。自費解体を進める場合は、工事前・中・後の写真、契約書、見積書、領収証、処理伝票を保管してください。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0963282430">公費解体プロジェクトチーム 096-328-2430</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372403/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372403/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372403/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="cleanup payments">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・地震で壊れたもの</p>
+              <h3>大型ごみ・家電の無料回収</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>地震で壊れたたんす、食器棚、テレビ、冷蔵庫、洗濯機、エアコンなどを処分したい人。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>ごみゼロコールへ事前に申し込むと<strong>無料で回収</strong>されます。市の処理施設へ持ち込む災害ごみも、当面は処理手数料が免除されます。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>通常のごみや地震が原因でないごみは対象外です。事業所から出たごみは手続きが異なります。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0570005374">ごみゼロコール 0570-00-5374</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372079/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372079/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372079/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="cleanup">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・派遣依頼を受付中</p>
+              <h3>片付けボランティア</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>熊本市内で住居などが被災し、自力での片付けが難しい世帯。高齢者のみの世帯や、障がい者のいる世帯などが例です。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>家屋内外の片付け、清掃、家具などの搬出をボランティアが手伝います。ウェブまたは電話で依頼できます。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>重機作業、建物の解体・修繕、高所や危険を伴う作業は対象外です。現地調査後に支援可否が決まり、派遣を保証するものではありません。</p>
+              </div>
+              <p class="phone-line"><a href="tel:08015351141">派遣要請 080-1535-1141</a>・<a href="tel:08015320617">080-1532-0617</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372117/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372117/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372117/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="child payments">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・未就学児</p>
+              <h3>無料の一時預かり保育</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>地震で普段の保育所などが利用できない、または片付けなどで一時的に家庭での保育が難しい乳幼児の保護者。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>対象の保育所、認定こども園、地域型保育事業で<strong>無料</strong>の一時預かりを利用できます。利用日数の制限はありません。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>事前申込みが必要です。施設の受入状況によっては利用できない場合があります。実施施設は区ごとの一覧で確認してください。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0963282568">保育幼稚園課 096-328-2568</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372368/index.html" target="_blank" rel="noopener noreferrer">熊本市の公式情報を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372368/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372368/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="payments">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・受付準備中</p>
+              <h3>被服・寝具など生活必需品</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>床上浸水、半壊、全壊の住家被害を受け、生活必需品を失うなどして日常生活が難しい人。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>被服、寝具、タオル、紙おむつ、調理器具などの生活必需品が、被害状況と世帯人数に応じた限度額の範囲で支給されます。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>2026年8月10日時点では申請受付の準備中です。受付開始後の方法と支給品は、熊本市の最新情報で確認してください。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0963282340">健康福祉政策課 096-328-2340</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372110/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="bath payments">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・協力施設</p>
+              <h3>無料入浴支援</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>避難所や車中泊で生活している、または自宅の断水・入浴設備の被災により入浴できない人。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>熊本市の協力施設で<strong>無料で入浴</strong>できます。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>住所と氏名を確認できる運転免許証やマイナンバーカードなどを提示します。タオルと着替えを持参し、利用できる施設を公式情報で確認してください。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0963643187">生活衛生課 096-364-3187</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372110/</p>
+            </div>
+          </article>
+
+          <article class="support-card" data-categories="housing">
+            <div class="support-card__head">
+              <p class="support-card__scope">熊本市・二次避難</p>
+              <h3>ホテル・旅館などへの宿泊支援</h3>
+            </div>
+            <div class="support-card__body">
+              <div class="plain-block">
+                <h4>こんな人</h4>
+                <p>避難所、車中泊、在宅避難での生活が難しく、宿泊施設で自立した生活ができる人。介助が必要な場合は介助者の同伴が必要です。</p>
+              </div>
+              <div class="benefit-block">
+                <h4>どうなる？</h4>
+                <p>熊本市が市内の宿泊施設を調整して案内します。宿泊期間は、生活再建のめどがつく<strong>1週間から10日間程度</strong>が目安です。</p>
+              </div>
+              <div class="caution-block">
+                <h4>注意</h4>
+                <p>高齢者、障がい者、妊産婦、乳幼児のいる世帯、医療的配慮が必要な人などが優先です。巡回する保健師か避難所担当職員へ相談してください。</p>
+              </div>
+              <p class="phone-line"><a href="tel:0963282340">宿泊支援チーム 096-328-2340</a></p>
+            </div>
+            <div class="support-card__footer">
+              <a class="official-link" href="https://www.city.kumamoto.jp/kiji00372110/index.html" target="_blank" rel="noopener noreferrer">熊本市の支援制度一覧を見る</a>
+              <button class="copy-link" type="button" data-copy-url="https://www.city.kumamoto.jp/kiji00372110/index.html">URLをコピー</button>
+              <p class="source-url">city.kumamoto.jp/kiji00372110/</p>
+            </div>
+          </article>
+
           <article class="support-card support-card--urgent" id="repair" data-categories="repair payments">
             <div class="support-card__head">
               <p class="support-card__scope">熊本市</p>
@@ -340,7 +600,7 @@
     <div class="wrap site-footer__inner">
       <div>
         <p class="site-footer__title">熊本支援情報</p>
-        <p>2026年8月10日確認</p>
+        <p>2026年8月11日確認</p>
       </div>
       <p class="disclaimer">このサイトは行政機関の公式サイトではありません。情報を分かりやすく探すための入口です。対象条件、期限、必要書類、受付状況は変更される場合があります。申込みの前に、必ず公式サイトや担当窓口で最新情報を確認してください。</p>
     </div>
@@ -349,3 +609,4 @@
   <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden>URLをコピーしました</div>
 </body>
 </html>
+
