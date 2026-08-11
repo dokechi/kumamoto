@@ -4,6 +4,19 @@ const status = document.querySelector("#results-status");
 const toast = document.querySelector("#toast");
 let toastTimer;
 
+function updateFilterCounts() {
+  filters.forEach((button) => {
+    const filter = button.dataset.filter;
+    const count = filter === "all"
+      ? cards.length
+      : cards.filter((card) => card.dataset.categories.split(" ").includes(filter)).length;
+
+    const label = button.dataset.label || button.textContent.replace(/（\d+件）/g, "").trim();
+    button.dataset.label = label;
+    button.textContent = `${label}（${count}件）`;
+  });
+}
+
 function clearActiveFilters() {
   filters.forEach((button) => {
     button.classList.remove("is-active");
@@ -44,6 +57,8 @@ function showCardFromHash() {
   status.textContent = "選んだ支援を表示しています";
   return true;
 }
+
+updateFilterCounts();
 
 filters.forEach((button) => {
   button.addEventListener("click", () => setFilter(button));
