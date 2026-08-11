@@ -143,6 +143,40 @@ h4 {
   text-underline-offset: 4px;
 }
 
+.deadline-alert {
+  border-bottom: 2px solid var(--accent);
+  background: var(--surface-soft);
+}
+
+.deadline-alert__inner {
+  min-height: 126px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+  padding-block: 24px;
+}
+
+.deadline-alert__label {
+  margin-bottom: 5px;
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.deadline-alert h2 {
+  margin-bottom: 5px;
+  font-size: clamp(1.25rem, 2.5vw, 1.7rem);
+}
+
+.deadline-alert p:last-child {
+  max-width: 72ch;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
 .hero {
   padding: clamp(48px, 7vw, 88px) 0;
 }
@@ -607,8 +641,17 @@ h4 {
 
 @media (max-width: 860px) {
   .hero__grid,
+  .deadline-alert__inner,
   .final-note__inner {
     grid-template-columns: 1fr;
+  }
+
+  .deadline-alert__inner {
+    gap: 16px;
+  }
+
+  .deadline-alert .button {
+    width: fit-content;
   }
 
   .hero h1 {
@@ -670,6 +713,10 @@ h4 {
   }
 
   .button {
+    width: 100%;
+  }
+
+  .deadline-alert .button {
     width: 100%;
   }
 
@@ -737,6 +784,7 @@ h4 {
 @media print {
   .notice-bar,
   .site-header,
+  .deadline-alert .button,
   .hero__actions,
   .filters,
   .results-status,
@@ -786,3 +834,4 @@ h4 {
     break-inside: avoid;
   }
 }
+
