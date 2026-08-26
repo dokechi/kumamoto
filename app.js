@@ -1,5 +1,5 @@
 const filters = [...document.querySelectorAll(".filter")];
-const cards = [...document.querySelectorAll(".support-card")];
+const cards = [...document.querySelectorAll("#support-grid .support-card")];
 const status = document.querySelector("#results-status");
 const toast = document.querySelector("#toast");
 let toastTimer;
