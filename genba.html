@@ -148,6 +148,11 @@ h1{
   margin-bottom:3px;
   font-size:15px;
 }
+.pay-note ul{
+  margin:7px 0 0;
+  padding-left:1.25em;
+}
+.pay-note li+li{margin-top:5px}
 .quick-label{
   display:inline-block;
   margin-bottom:8px;
@@ -338,7 +343,7 @@ footer{
     <div class="kicker">2026年7月 熊本地震</div>
     <h1>熊本へ復旧工事・仮設住宅の施工に<br>来ている人へ</h1>
     <p>知らずに会社負担しているお金、ありませんか？</p>
-    <p class="date">情報確認日：2026年8月10日</p>
+    <p class="date">情報確認日：2026年8月26日</p>
   </div>
 </section>
 
@@ -350,9 +355,12 @@ footer{
   </div>
 
   <div class="pay-note">
-    <strong>先にひとつだけ。</strong>
-    ほとんどは、作業員本人に現金が出る制度ではありません。<br>
-    <b>会社・元請を通して、現場にかかる負担を減らせる仕組み</b>です。
+    <strong>先に確認</strong>
+    <ul>
+      <li><b>宿泊代・高速代は「熊本へ来た」だけでは自動で出ません。</b></li>
+      <li><b>元請の発注条件や、設計変更の対象か確認が必要です。</b></li>
+      <li>作業員本人に直接現金が出る制度は少なく、会社負担が軽くなる制度が中心です。</li>
+    </ul>
   </div>
 
   <nav class="menu">
@@ -370,6 +378,11 @@ footer{
       <span class="top"><span class="icon">🔧</span>被災した家を直している</span>
       <span class="arrow">修理代 → 市が払う場合あり</span>
       <span class="hint">配管・トイレ・給湯器なども対象になり得ます</span>
+    </a>
+    <a href="#demolition">
+      <span class="top"><span class="icon">🏢</span>被災した事業所を片付けたい</span>
+      <span class="arrow">公費解体 → 半壊以上が対象</span>
+      <span class="hint">中小企業者が所有する事業所等も対象になり得ます</span>
     </a>
   </nav>
 
@@ -524,6 +537,51 @@ footer{
     </div>
   </article>
 
+  <article class="card" id="demolition">
+    <div class="card-head">
+      <div class="eyebrow">🏢 被災した事業所を片付けたい</div>
+      <h2>半壊以上の事業所等は、公費解体の対象になる場合があります</h2>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>条件に合えば、熊本市が所有者に代わって解体・撤去します。</strong>
+      </div>
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>半壊以上と判定された家屋等を所有する個人、または中小企業者。</p>
+        <ul>
+          <li>事務所</li><li>店舗</li><li>工場</li><li>倉庫など</li>
+        </ul>
+      </div>
+      <div class="caution">
+        <span class="small">ここだけ注意</span>
+        <p><b>解体を先に進める前に、市へ確認。</b><br>
+        現況写真、見積書、契約書、領収書などは保管してください。</p>
+      </div>
+      <div class="details">
+        <details>
+          <summary>受付日程を見る</summary>
+          <div class="detail-inner">
+            <ul>
+              <li>申請予約は2026年8月25日から受付中です。</li>
+              <li>申請書類の受付期間は2026年9月10日から12月10日までです。</li>
+              <li>予約時点でり災証明書を待っている場合も相談できます。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="ask-box">
+        <span class="ask-title">担当窓口</span>
+        <p><a href="tel:0963282430">公費解体プロジェクトチーム 096-328-2430</a></p>
+      </div>
+      <div class="official">
+        <a class="btn" href="https://www.city.kumamoto.jp/kiji00372403/index.html" target="_blank" rel="noopener">熊本市の公式ページを見る</a>
+        <span class="url">https://www.city.kumamoto.jp/kiji00372403/index.html</span>
+      </div>
+    </div>
+  </article>
+
   <section class="other">
     <h3>会社側でもう1つ確認：遠方から資材を持ってきている</h3>
     <p>現地で資材を確保できず、遠方から調達して運搬費などが増えた場合は、「遠隔地からの建設資材調達に係る設計変更」の運用があります。対象工事・対象資材かは元請や発注者へ確認してください。</p>
@@ -545,6 +603,7 @@ footer{
       <li>宿泊・高速・燃料・帰省などの領収書を捨てない</li>
       <li>誰が、どこから、何日来ているかを残す</li>
       <li>資材も遠方調達しているなら、その費用も確認する</li>
+      <li>被災した事業所を解体するなら、先に公費解体の対象を確認する</li>
     </ol>
   </section>
 
