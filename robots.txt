@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dokechi.github.io/kumamoto/sitemap.xml

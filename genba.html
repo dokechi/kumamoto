@@ -3,8 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
 <title>熊本へ復旧工事に来ている人へ</title>
 <meta name="description" content="熊本へ復旧・仮設住宅などの施工に入る会社や現場の人向け。高速代、遠方作業員の宿泊・移動費、被災住宅の修理制度を簡単に確認できます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="熊本へ復旧工事に来ている人へ">
+<meta property="og:description" content="高速代、遠方作業員の宿泊・移動費、被災住宅の修理、被災事業所の支援を公式情報から確認できます。">
+<meta property="og:url" content="https://dokechi.github.io/kumamoto/genba.html">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://dokechi.github.io/kumamoto/genba.html">
 <style>
 :root{
   --text:#2F2A27;
@@ -17,7 +24,7 @@
   --hero-accent:#D8C8BD;
 
   --primary:#9C8578;
-  --primary-strong:#8D776C;
+  --primary-strong:#856F65;
   --primary-soft:#F2ECE7;
 
   --info:#9A867A;
@@ -41,10 +48,14 @@ body{
   line-height:1.7;
 }
 a{color:inherit}
+.skip-link{position:fixed;top:8px;left:8px;z-index:10;padding:10px 14px;border-radius:10px;background:#fff;color:var(--text);font-weight:900;transform:translateY(-150%)}
+.skip-link:focus{transform:translateY(0)}
+a:focus-visible{outline:3px solid #5F4B40;outline-offset:3px}
+summary:focus-visible{outline:0;box-shadow:inset 0 0 0 3px #5F4B40}
 .wrap{max-width:760px;margin:0 auto;padding:0 16px 72px}
 
 .hero{
-  background:linear-gradient(180deg, #B8A295 0%, #AD9688 100%);
+  background:linear-gradient(180deg, #887067 0%, #7F695F 100%);
   color:#fff;
   border-bottom:4px solid var(--hero-accent);
 }
@@ -53,7 +64,7 @@ a{color:inherit}
   display:inline-block;
   padding:6px 11px;
   margin-bottom:12px;
-  background:rgba(255,255,255,.20);
+  background:rgba(47,42,39,.22);
   color:#fff;
   font-size:12px;
   font-weight:800;
@@ -69,11 +80,11 @@ h1{
 .hero p{
   margin:14px 0 0;
   font-size:16px;
-  color:#F6F3F0;
+  color:#fff;
 }
 .date{
   margin-top:9px !important;
-  color:#ECE3DC !important;
+  color:#fff !important;
   font-size:12px !important;
 }
 
@@ -206,9 +217,9 @@ h1{
   font-weight:900;
   letter-spacing:.04em;
 }
-.answer .small{color:#73877A}
-.who .small{color:#8A756A}
-.caution .small{color:#9C816B}
+.answer .small{color:#506458}
+.who .small{color:#655148}
+.caution .small{color:#704F3D}
 
 .answer strong{
   display:block;
@@ -274,7 +285,7 @@ summary{
   padding:5px 9px;
   border-radius:999px;
   background:#E7EEE9;
-  color:#667D6F;
+  color:#486052;
   font-size:12px;
   font-weight:900;
 }
@@ -315,7 +326,7 @@ summary{
 .last{
   margin-top:28px;
   padding:18px 16px;
-  background:#A89486;
+  background:#6F5A50;
   color:#fff;
   border-radius:16px;
 }
@@ -334,9 +345,12 @@ footer{
   .card h2{font-size:22px}
   .answer strong{font-size:20px}
 }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">本文へ移動</a>
 
 <section class="hero">
   <div class="wrap">
@@ -347,7 +361,7 @@ footer{
   </div>
 </section>
 
-<main class="wrap">
+<main class="wrap" id="main">
   <div class="intro">
     <span class="quick-label">まず3秒で確認</span><br>
     あなたの現場は、どれですか？
@@ -365,24 +379,34 @@ footer{
 
   <nav class="menu">
     <a href="#highway">
-      <span class="top"><span class="icon">🚗</span>車で熊本へ来た</span>
+      <span class="top"><span class="icon" aria-hidden="true">🚗</span>車で熊本へ来た</span>
       <span class="arrow">高速代 → 無料になるかも</span>
-      <span class="hint">自治体などの要請で、人・資材を運ぶ車両</span>
+      <span class="hint">熊本県内の被災自治体から要請され、人・資材を運ぶ車両</span>
     </a>
     <a href="#stay">
-      <span class="top"><span class="icon">👷</span>遠方から応援に来た</span>
-      <span class="arrow">宿泊・移動費 → 下請でも対象かも</span>
-      <span class="hint">仮設住宅など。対象工事か元請に確認</span>
+      <span class="top"><span class="icon" aria-hidden="true">👷</span>遠方から応援に来た</span>
+      <span class="arrow">宿泊・移動費 → 対象工事なら設計変更</span>
+      <span class="hint">熊本県土木部発注の対象工事か、元請に確認</span>
     </a>
     <a href="#repair">
-      <span class="top"><span class="icon">🔧</span>被災した家を直している</span>
+      <span class="top"><span class="icon" aria-hidden="true">🔧</span>被災した家を直している</span>
       <span class="arrow">修理代 → 市が払う場合あり</span>
       <span class="hint">配管・トイレ・給湯器なども対象になり得ます</span>
     </a>
     <a href="#demolition">
-      <span class="top"><span class="icon">🏢</span>被災した事業所を片付けたい</span>
+      <span class="top"><span class="icon" aria-hidden="true">🏢</span>被災した事業所を解体したい</span>
       <span class="arrow">公費解体 → 半壊以上が対象</span>
       <span class="hint">中小企業者が所有する事業所等も対象になり得ます</span>
+    </a>
+    <a href="#business-finance">
+      <span class="top"><span class="icon" aria-hidden="true">🏦</span>会社の資金繰りが苦しい</span>
+      <span class="arrow">県融資 → 1企業8,000万円まで</span>
+      <span class="hint">被災証明または売上減少などの条件があります</span>
+    </a>
+    <a href="#business-waste">
+      <span class="top"><span class="icon" aria-hidden="true">🧹</span>事業所の災害ごみを処分したい</span>
+      <span class="arrow">処分費 → 減免になる場合あり</span>
+      <span class="hint">搬入前の相談が必要。工事廃材などは対象外</span>
     </a>
   </nav>
 
@@ -393,7 +417,7 @@ footer{
 
   <article class="card" id="highway">
     <div class="card-head">
-      <div class="eyebrow">🚗 車で熊本へ来た</div>
+      <div class="eyebrow"><span aria-hidden="true">🚗</span> 車で熊本へ来た</div>
       <h2>高速代が無料になる場合があります</h2>
     </div>
     <div class="card-body">
@@ -403,7 +427,7 @@ footer{
       </div>
       <div class="who">
         <span class="small">あなたが対象かも</span>
-        <p>自治体などからの要請で、復旧のために人や資材を熊本へ運んでいる会社・車両。</p>
+        <p>熊本県内の被災自治体からの要請で、復旧のために人員や物資を運んでいる車両。</p>
       </div>
       <div class="caution">
         <span class="small">ここだけ注意</span>
@@ -415,9 +439,9 @@ footer{
           <summary>もう少し詳しく見る</summary>
           <div class="detail-inner">
             <ul>
-              <li>被災地の復旧・復興のため、人員や物資等を輸送する車両が対象になり得ます。</li>
-              <li>公的機関等の派遣要請に基づく証明書が必要です。</li>
-              <li>無料措置を受ける際は、ETCではなく指定された料金所レーンを利用します。</li>
+              <li>熊本県内の被災自治体から要請された、人員・物資等の輸送車両が対象です。</li>
+              <li>派遣要請元の公的機関に対象車両であることを確認し、最寄りの都道府県または市町村へ申請して「災害派遣等従事車両証明書」の交付を受けます。</li>
+              <li>無料措置ではETCを使えません。指定された料金所レーンを利用します。</li>
             </ul>
           </div>
         </details>
@@ -431,8 +455,8 @@ footer{
 
   <article class="card" id="stay">
     <div class="card-head">
-      <div class="eyebrow">👷 遠方から応援に来た</div>
-      <h2>下請でも、宿泊・移動費などが対象になり得ます</h2>
+      <div class="eyebrow"><span aria-hidden="true">👷</span> 遠方から応援に来た</div>
+      <h2>熊本県土木部の対象工事なら、宿泊・移動費などを設計変更できる場合があります</h2>
       <span class="badge">「下請け次数は問わない」と県の運用に明記</span>
     </div>
     <div class="card-body">
@@ -451,7 +475,7 @@ footer{
 
       <div class="who">
         <span class="small">あなたが対象かも</span>
-        <p>熊本県土木部の対象工事などで、近くでは人を確保できず、遠方から実際に施工する作業員を呼んでいる場合。</p>
+        <p>熊本県土木部が発注し、2016年10月3日以降に公告または指名通知した対象工事で、工事箇所の近くでは作業員を確保できず、やむを得ず遠方から実際に施工する人を呼んでいる場合。</p>
         <ul>
           <li>会社・支店から現場まで30km以上、または移動60分以上が目安</li>
           <li>普通作業員、配管工、大工、電工、とび工、重機オペレーターなどが対象例</li>
@@ -460,9 +484,9 @@ footer{
       </div>
 
       <div class="caution">
-        <span class="small">仮設住宅の現場なら、ここが重要</span>
-        <p><b>「仮設住宅を作っている＝自動的に対象」ではありません。</b><br>
-        今回の工事契約がこの制度の対象になっているか、元請側で特記仕様書や発注条件の確認が必要です。</p>
+        <span class="small">対象工事か、ここを確認</span>
+        <p><b>熊本市発注・民間工事・仮設住宅というだけでは対象になりません。</b><br>
+        元請である受注者が、発注者へ事前に協議する必要があります。</p>
       </div>
 
       <div class="details">
@@ -470,7 +494,7 @@ footer{
           <summary>もう少し詳しく見る</summary>
           <div class="detail-inner">
             <ul>
-              <li>県の資料では「別途の現金支給」ではなく、受注者と発注者の協議による設計変更として扱います。</li>
+              <li>別途の現金支給はありません。受注者と発注者の協議による設計変更として扱います。</li>
               <li>領収書・宿泊者ごとの宿泊費資料・燃料費・高速道路利用料・帰省旅費など、実際に支払ったことを確認できる資料が重要です。</li>
               <li>現場代理人・監理（主任）技術者・事務員などは、この制度上の「労働者」の対象から外れる扱いがあります。</li>
               <li>宿泊費には県の運用上の上限額がありますが、妥当性を証明できる場合の扱いも定められています。</li>
@@ -481,8 +505,8 @@ footer{
 
       <div class="ask-box">
         <span class="ask-title">元請に聞くなら、この2つだけ</span>
-        <p>① 今回の工事は「地域外からの労働者確保に要する間接費の設計変更」の対象ですか？</p>
-        <p>② うちの作業員の宿泊費・帰省旅費・送迎費・高速代なども、実績として上げられますか？</p>
+        <p>① 今回の工事は、熊本県土木部発注の「地域外からの労働者確保に要する間接費の設計変更」の対象ですか？</p>
+        <p>② 発注者への事前協議は済んでいますか？ うちの作業員の宿泊費・帰省旅費・送迎費・高速代も実績に含められますか？</p>
       </div>
 
       <div class="official">
@@ -492,9 +516,9 @@ footer{
     </div>
   </article>
 
-  <article class="card" id="repair">
+  <article class="card" id="repair" data-deadline="2026-10-27">
     <div class="card-head">
-      <div class="eyebrow">🔧 被災した家を直している</div>
+      <div class="eyebrow"><span aria-hidden="true">🔧</span> 被災した家を直している</div>
       <h2>その修理代、市が業者へ払う制度があります</h2>
     </div>
     <div class="card-body">
@@ -515,17 +539,18 @@ footer{
       </div>
       <div class="caution">
         <span class="small">ここだけ注意</span>
-        <p><b>工事前に制度確認。</b><br>
-        被災者が修理代をすでに全額支払っていると、対象外になるためです。</p>
+        <p><b>工事前、被災者が代金を支払う前に制度確認。</b><br>
+        支払いを先に進めると対象外になる場合があります。</p>
       </div>
       <div class="details">
         <details>
           <summary>施工前に知っておくこと</summary>
           <div class="detail-inner">
             <ul>
-              <li>施工会社への補助金ではなく、被災者が利用する「住宅の応急修理」です。</li>
+              <li>被災者が利用する「住宅の応急修理」です。施工会社への補助金ではありません。</li>
               <li>施工前・施工中・施工後の写真が重要です。</li>
               <li>熊本市から施工業者への支払いには時間がかかる場合があります。</li>
+              <li>原則の完了期限は2026年10月27日です。2027年1月27日まで延長する方向で国と協議済みのため、最新状況は公式ページで確認してください。</li>
             </ul>
           </div>
         </details>
@@ -537,9 +562,9 @@ footer{
     </div>
   </article>
 
-  <article class="card" id="demolition">
+  <article class="card" id="demolition" data-deadline="2026-12-10">
     <div class="card-head">
-      <div class="eyebrow">🏢 被災した事業所を片付けたい</div>
+      <div class="eyebrow"><span aria-hidden="true">🏢</span> 被災した事業所を解体したい</div>
       <h2>半壊以上の事業所等は、公費解体の対象になる場合があります</h2>
     </div>
     <div class="card-body">
@@ -549,7 +574,7 @@ footer{
       </div>
       <div class="who">
         <span class="small">あなたが対象かも</span>
-        <p>半壊以上と判定された家屋等を所有する個人、または中小企業者。</p>
+        <p>半壊以上と判定された家屋等の現在の所有者で、2026年7月28日時点でも所有していた個人、または中小企業者。</p>
         <ul>
           <li>事務所</li><li>店舗</li><li>工場</li><li>倉庫など</li>
         </ul>
@@ -557,7 +582,7 @@ footer{
       <div class="caution">
         <span class="small">ここだけ注意</span>
         <p><b>解体を先に進める前に、市へ確認。</b><br>
-        現況写真、見積書、契約書、領収書などは保管してください。</p>
+        自費で進める場合は工事前・中・後の写真、見積書、契約書、領収証、計量伝票、マニフェストを保管してください。</p>
       </div>
       <div class="details">
         <details>
@@ -567,6 +592,8 @@ footer{
               <li>申請予約は2026年8月25日から受付中です。</li>
               <li>申請書類の受付期間は2026年9月10日から12月10日までです。</li>
               <li>予約時点でり災証明書を待っている場合も相談できます。</li>
+              <li>半壊以上の建物全体を自費解体した場合は、費用償還の対象になることがあります。一部解体と市の基準を超えた費用は対象外です。</li>
+              <li>必要書類と市の費用基準は、決まり次第公表されます。</li>
             </ul>
           </div>
         </details>
@@ -578,6 +605,78 @@ footer{
       <div class="official">
         <a class="btn" href="https://www.city.kumamoto.jp/kiji00372403/index.html" target="_blank" rel="noopener">熊本市の公式ページを見る</a>
         <span class="url">https://www.city.kumamoto.jp/kiji00372403/index.html</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" id="business-finance">
+    <div class="card-head">
+      <div class="eyebrow"><span aria-hidden="true">🏦</span> 被災した会社の資金繰り</div>
+      <h2>被害や売上減少がある中小企業向けに、県の新しい融資があります</h2>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>1企業8,000万円まで。保証料率は県補助後0％です。</strong>
+      </div>
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>令和8年熊本地震の被害を受け、次のいずれかに該当する県内の中小企業者。</p>
+        <ul>
+          <li>罹災証明書または被災証明書がある</li>
+          <li>地震の影響で、申込日から1年以内の連続する3か月間の売上高などの平均が前年同期比で減少した、または減少する見込みがある</li>
+        </ul>
+      </div>
+      <div class="caution">
+        <span class="small">ここだけ注意</span>
+        <p><b>返済が必要な融資です。補助金ではありません。</b><br>
+        取扱金融機関、商工会議所、商工会などへ申し込みます。</p>
+      </div>
+      <div class="details">
+        <details>
+          <summary>主な条件を見る</summary>
+          <div class="detail-inner">
+            <ul>
+              <li>金融円滑化特別資金は、1企業8,000万円、1組合1億円までです。</li>
+              <li>小規模事業者おうえん資金は、保証付き融資残高との合計で2,000万円までです。</li>
+              <li>申込みは2026年8月24日に始まっています。融資期間や利率は資金ごとに異なります。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="official">
+        <a class="btn" href="https://www.pref.kumamoto.jp/soshiki/61/277230.html" target="_blank" rel="noopener">熊本県の公式ページを見る</a>
+        <span class="url">https://www.pref.kumamoto.jp/soshiki/61/277230.html</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="card" id="business-waste">
+    <div class="card-head">
+      <div class="eyebrow"><span aria-hidden="true">🧹</span> 被災した事業所の片付け</div>
+      <h2>事業所の災害ごみは、処分手数料が減免される場合があります</h2>
+    </div>
+    <div class="card-body">
+      <div class="answer">
+        <span class="small">まず結論</span>
+        <strong>市の施設で受け入れられる災害ごみは、処分費の減免対象です。</strong>
+      </div>
+      <div class="who">
+        <span class="small">あなたが対象かも</span>
+        <p>地震によって事業所で発生した、可燃ごみや不燃ごみなどを処分したい事業者。</p>
+      </div>
+      <div class="caution">
+        <span class="small">ここだけ注意</span>
+        <p><b>搬入前に事業ごみ対策課へ相談してください。</b><br>
+        収集運搬費は対象外です。外装・内装・外構工事の廃材、石膏ボード、スレート材、コンクリート製品などは市施設へ持ち込めません。</p>
+      </div>
+      <div class="ask-box">
+        <span class="ask-title">担当窓口</span>
+        <p><a href="tel:0963282362">事業ごみ対策課 096-328-2362</a></p>
+      </div>
+      <div class="official">
+        <a class="btn" href="https://www.city.kumamoto.jp/kankyo/kiji00372073/index.html" target="_blank" rel="noopener">熊本市の公式ページを見る</a>
+        <span class="url">https://www.city.kumamoto.jp/kankyo/kiji00372073/index.html</span>
       </div>
     </div>
   </article>
@@ -604,6 +703,7 @@ footer{
       <li>誰が、どこから、何日来ているかを残す</li>
       <li>資材も遠方調達しているなら、その費用も確認する</li>
       <li>被災した事業所を解体するなら、先に公費解体の対象を確認する</li>
+      <li>被災した会社は県融資と災害ごみ処分費の減免を確認する</li>
     </ol>
   </section>
 
