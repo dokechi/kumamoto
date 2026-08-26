@@ -1,0 +1,27 @@
+name: Site quality
+
+on:
+  pull_request:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: site-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Check HTML, internal links, metadata and deadlines
+        run: python .github/check-site.py --nu
+      - name: Check external links on scheduled and manual runs
+        if: github.event_name != 'pull_request'
+        run: python .github/check-site.py --external-links

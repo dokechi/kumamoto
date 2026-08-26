@@ -4,11 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f8f4ef">
-  <meta name="description" content="2026年7月熊本地震の支援情報を、復旧・施工で来ている現場の人向けと、熊本で暮らしている現地住民向けに分けて案内します。">
+  <link rel="icon" href="data:,">
+  <meta name="description" content="2026年7月熊本地震の支援情報を、被災した住民、被災した会社、復旧・施工で来ている会社や現場の人に分けて案内します。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="熊本の支援情報">
-  <meta property="og:description" content="復旧・施工で来ている人と、熊本で暮らしている人。">
+  <meta property="og:description" content="被災した住民・会社と、復旧・施工で来ている人へ。">
+  <meta property="og:url" content="https://dokechi.github.io/kumamoto/">
   <title>熊本の支援情報</title>
+  <link rel="canonical" href="https://dokechi.github.io/kumamoto/">
   <script>
     // 以前の /kumamoto/#obstacle などの共有URLを壊さないため、
     // ハッシュ付きアクセスは従来の住民向けページへ引き継ぐ。
@@ -38,6 +41,8 @@
       -webkit-font-smoothing:antialiased;
     }
     a{color:inherit}
+    .skip-link{position:fixed;top:8px;left:8px;z-index:10;padding:10px 14px;border-radius:10px;background:#fff;color:var(--ink);font-weight:900;transform:translateY(-150%)}
+    .skip-link:focus{transform:translateY(0)}
     .site-header{
       height:66px;
       display:flex;
@@ -109,13 +114,13 @@
       outline:3px solid rgba(156,133,120,.28);
       outline-offset:3px;
     }
-    .choice--work{--accent:var(--mocha)}
-    .choice--resident{--accent:var(--sage)}
+    .choice--work{--accent:var(--mocha);--accent-text:#6b5a51}
+    .choice--resident{--accent:var(--sage);--accent-text:#4d6053}
     .choice__content{width:100%}
     .choice__label{
       display:block;
       margin:0 0 8px;
-      color:var(--accent);
+      color:var(--accent-text);
       font-size:14px;
       line-height:1;
       font-weight:900;
@@ -179,19 +184,21 @@
       .choice p{font-size:14px;line-height:1.55}
       .choice__arrow{right:18px;font-size:25px}
     }
+    @media(prefers-reduced-motion:reduce){.choice{transition:none}}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header">
     <div class="site-header__inner">
       <div class="site-header__brand">熊本支援まとめ</div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="intro" aria-labelledby="page-title">
       <h1 id="page-title">熊本の支援情報、</h1>
-      <p>復旧・施工で来ている人と、<br>熊本で暮らしている人。</p>
+      <p>被災した住民・会社と、<br>復旧・施工で来ている人。</p>
     </section>
 
     <nav class="choice-list" aria-label="支援情報を立場から選ぶ">
@@ -206,9 +213,9 @@
 
       <a class="choice choice--work" href="./genba.html">
         <div class="choice__content">
-          <span class="choice__label">復旧・施工</span>
-          <h2>現場の人</h2>
-          <p>熊本へ応援に来ている会社・職人向け。<br>高速代、宿泊・移動費などを見る。</p>
+          <span class="choice__label">復旧・事業者支援</span>
+          <h2>現場・被災した会社</h2>
+          <p>熊本へ応援に来ている会社・職人と、被災した事業者向け。<br>高速代、宿泊・移動費、融資、片付けなどを見る。</p>
         </div>
         <span class="choice__arrow" aria-hidden="true">›</span>
       </a>
