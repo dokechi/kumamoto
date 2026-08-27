@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#003399">
 <link rel="icon" href="data:,">
 <title>熊本へ復旧工事に来ている人へ</title>
 <meta name="description" content="熊本へ復旧・仮設住宅などの施工に入る会社や現場の人向け。高速代、遠方作業員の宿泊・移動費、被災住宅の修理制度を簡単に確認できます。">
@@ -13,344 +14,89 @@
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="https://dokechi.github.io/kumamoto/genba.html">
 <style>
-:root{
-  --text:#2F2A27;
-  --muted:#756860;
-  --bg:#F7F3EE;
-  --white:#FFFFFF;
-  --line:#E6DDD5;
-
-  --hero:#B39B8D;
-  --hero-accent:#D8C8BD;
-
-  --primary:#9C8578;
-  --primary-strong:#856F65;
-  --primary-soft:#F2ECE7;
-
-  --info:#9A867A;
-  --info-soft:#F4EEEA;
-
-  --success:#8FA193;
-  --success-soft:#EEF3EF;
-
-  --caution:#B39A82;
-  --caution-soft:#F8F2EC;
-
-  --neutral-soft:#F1EBE5;
-}
+:root{--blue:#003399;--link:#0000ee;--visited:#551a8b;--red:#d40000;--yellow:#ffff99;--pale-blue:#e6f3ff;--gray:#d4d0c8;--line:#666;--text:#000}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
-  line-height:1.7;
-}
-a{color:inherit}
-.skip-link{position:fixed;top:8px;left:8px;z-index:10;padding:10px 14px;border-radius:10px;background:#fff;color:var(--text);font-weight:900;transform:translateY(-150%)}
-.skip-link:focus{transform:translateY(0)}
-a:focus-visible{outline:3px solid #5F4B40;outline-offset:3px}
-summary:focus-visible{outline:0;box-shadow:inset 0 0 0 3px #5F4B40}
-.wrap{max-width:760px;margin:0 auto;padding:0 16px 72px}
-
-.hero{
-  background:linear-gradient(180deg, #887067 0%, #7F695F 100%);
-  color:#fff;
-  border-bottom:4px solid var(--hero-accent);
-}
-.hero .wrap{padding-top:28px;padding-bottom:30px}
-.kicker{
-  display:inline-block;
-  padding:6px 11px;
-  margin-bottom:12px;
-  background:rgba(47,42,39,.22);
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.28);
-}
-h1{
-  margin:0;
-  font-size:clamp(29px,7vw,43px);
-  line-height:1.22;
-  letter-spacing:-.03em;
-}
-.hero p{
-  margin:14px 0 0;
-  font-size:16px;
-  color:#fff;
-}
-.date{
-  margin-top:9px !important;
-  color:#fff !important;
-  font-size:12px !important;
-}
-
-.intro{
-  margin:24px 0 12px;
-  font-size:20px;
-  font-weight:900;
-  line-height:1.45;
-}
-.intro small{
-  display:block;
-  margin-top:5px;
-  color:var(--muted);
-  font-size:13px;
-  font-weight:500;
-}
-
-.menu{display:grid;gap:12px}
-.menu a{
-  display:block;
-  text-decoration:none;
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px 16px;
-  box-shadow:0 3px 12px rgba(111,95,84,.05);
-}
-.menu .top{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-bottom:4px;
-  font-size:18px;
-  font-weight:900;
-}
-.icon{font-size:26px;line-height:1}
-.arrow{
-  display:block;
-  padding-left:37px;
-  color:var(--primary-strong);
-  font-size:17px;
-  font-weight:900;
-}
-.hint{
-  display:block;
-  padding-left:37px;
-  margin-top:3px;
-  font-size:12px;
-  color:var(--muted);
-}
-
-.note{
-  margin:16px 0 30px;
-  padding:14px 15px;
-  background:var(--neutral-soft);
-  border:1px solid var(--line);
-  border-radius:12px;
-  font-size:13px;
-}
-.note b{color:var(--text)}
-.pay-note{
-  margin:14px 0 12px;
-  padding:14px 15px;
-  background:#EEE7E1;
-  border:1px solid var(--line);
-  border-radius:14px;
-  font-size:14px;
-  line-height:1.65;
-}
-.pay-note strong{
-  display:block;
-  margin-bottom:3px;
-  font-size:15px;
-}
-.pay-note ul{
-  margin:7px 0 0;
-  padding-left:1.25em;
-}
-.pay-note li+li{margin-top:5px}
-.quick-label{
-  display:inline-block;
-  margin-bottom:8px;
-  padding:4px 9px;
-  border-radius:999px;
-  background:#ECE3DC;
-  color:#755F53;
-  font-size:12px;
-  font-weight:900;
-}
-
-.card{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:20px;
-  overflow:hidden;
-  margin:17px 0 24px;
-  box-shadow:0 4px 16px rgba(111,95,84,.05);
-}
-.card-head{
-  padding:18px 17px 16px;
-  border-bottom:1px solid var(--line);
-  background:#FCFAF8;
-}
-.card-head .eyebrow{
-  font-size:12px;
-  font-weight:900;
-  color:var(--muted);
-}
-.card h2{
-  margin:5px 0 0;
-  font-size:25px;
-  line-height:1.35;
-  letter-spacing:-.02em;
-}
-.card-body{padding:17px}
-
-.answer,.who,.caution{
-  margin:0 0 12px;
-  padding:15px;
-  border-radius:14px;
-}
-.answer{background:var(--success-soft)}
-.who{background:var(--info-soft)}
-.caution{background:var(--caution-soft)}
-
-.small{
-  display:block;
-  margin-bottom:4px;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:.04em;
-}
-.answer .small{color:#506458}
-.who .small{color:#655148}
-.caution .small{color:#704F3D}
-
-.answer strong{
-  display:block;
-  font-size:22px;
-  line-height:1.45;
-}
-.answer{
-  border:1px solid #DDE8E0;
-}
-.who p,.caution p{margin:0}
-.who p{font-weight:800}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:#000;font-family:"MS PGothic","MS Gothic",Meiryo,sans-serif;font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+a{color:var(--link);text-decoration:underline;text-underline-offset:2px}
+a:visited{color:var(--visited)}
+a:focus-visible,summary:focus-visible{outline:3px solid #ff0;outline-offset:2px}
+.skip-link{position:fixed;top:6px;left:6px;z-index:20;padding:8px 10px;border:2px solid #000;background:#fff;color:#000;font-weight:700;transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+.retro-top{border-top:5px solid var(--blue);border-bottom:2px solid var(--blue);background:#fff}
+.retro-top__inner{width:min(100% - 24px,760px);margin:0 auto;padding:7px 0;color:var(--blue);font-size:13px;font-weight:700}
+.wrap{width:min(100% - 24px,760px);margin:0 auto;padding:0 0 36px}
+.hero{margin-top:8px;background:#fff;color:#000;border:2px solid var(--blue)}
+.hero .wrap{width:100%;padding:0}
+.hero::before{content:"■■ 復旧・事業者支援 ■■";display:block;padding:6px 8px;background:var(--blue);color:#fff;text-align:center;font-weight:700}
+.hero .wrap>*{margin-left:10px;margin-right:10px}
+.kicker{display:inline-block;margin-top:10px;margin-bottom:5px;padding:2px 6px;border:1px solid var(--blue);border-radius:0;background:var(--pale-blue);color:var(--blue);font-size:12px;font-weight:700}
+h1{margin:0;color:var(--blue);font-size:clamp(25px,7.2vw,34px);line-height:1.3;letter-spacing:0}
+.hero p{margin:7px 10px 0!important;color:#000;font-size:15px}
+.hero .date{margin-bottom:10px!important;color:var(--red)!important;font-size:12px!important;font-weight:700}
+.intro{margin:14px 0 7px;padding:5px 7px;border-left:8px solid var(--blue);border-bottom:1px solid var(--blue);color:var(--blue);font-size:20px;font-weight:700;line-height:1.4}
+.intro small{display:block;margin-top:4px;color:#000;font-size:13px;font-weight:400}
+.quick-label{display:inline-block;margin-bottom:5px;padding:2px 5px;border:1px solid var(--red);border-radius:0;background:#fff;color:var(--red);font-size:12px;font-weight:700}
+.pay-note{margin:8px 0 10px;padding:9px 10px;border:2px solid var(--red);border-radius:0;background:var(--yellow);font-size:14px;line-height:1.55}
+.pay-note strong{display:block;margin-bottom:3px;color:var(--red);font-size:16px}
+.pay-note ul{margin:5px 0 0;padding-left:1.25em}
+.pay-note li+li{margin-top:3px}
+.menu{display:grid;grid-template-columns:1fr;gap:7px}
+.menu a{display:block;padding:0;border:2px solid var(--blue);border-radius:0;background:#fff;color:#000;text-decoration:none;box-shadow:none}
+.menu .top{display:flex;align-items:center;gap:7px;margin:0;padding:6px 8px;border-bottom:1px solid var(--blue);background:var(--pale-blue);color:#000;font-size:17px;font-weight:700}
+.icon{font-size:20px;line-height:1}
+.arrow{display:block;min-height:44px;margin:7px 8px 0;padding:8px 9px;border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #555;border-bottom:2px solid #555;background:var(--gray);color:var(--link);font-size:15px;font-weight:700;text-align:center;text-decoration:underline}
+.hint{display:block;margin:5px 8px 8px;padding:0;color:#333;font-size:12px}
+.menu a:active .arrow{border-top-color:#555;border-left-color:#555;border-right-color:#fff;border-bottom-color:#fff}
+.note{margin:10px 0 14px;padding:7px 8px;border:1px dashed #777;border-radius:0;background:#fff;font-size:13px}
+.note b{color:var(--red)}
+.card{margin:10px 0 14px;border:2px solid var(--blue);border-radius:0;background:#fff;box-shadow:none;overflow:hidden}
+.card-head{padding:7px 8px;border-bottom:1px solid var(--blue);background:var(--pale-blue)}
+.card-head .eyebrow{color:var(--red);font-size:12px;font-weight:700}
+.card h2{margin:2px 0 0;color:#000;font-size:19px;line-height:1.35;letter-spacing:0}
+.card-body{padding:0}
+.answer,.who,.caution{display:grid;grid-template-columns:88px minmax(0,1fr);gap:0;margin:0;padding:0;border-radius:0;border-top:1px solid #999;background:#fff}
+.card-body>.answer:first-child{border-top:0}
+.small{display:block;margin:0;padding:8px 6px;border-right:1px solid #999;background:var(--yellow);color:#000!important;font-size:12px;font-weight:700;letter-spacing:0}
+.who .small{background:var(--pale-blue);color:var(--blue)!important}
+.caution .small{background:#fff0e6;color:var(--red)!important}
+.answer strong,.answer ul,.who p,.who ul,.caution p{margin:0;padding:8px 7px;color:#000;line-height:1.55}
+.answer strong{display:block;color:var(--red);font-size:20px}
+.answer ul,.who ul{padding-left:25px}
+.who p{font-weight:400}
 ul{margin:7px 0 0;padding-left:1.25em}
-li{margin:4px 0}
-
-.details{
-  margin-top:14px;
-  border-top:1px dashed #D8CEC5;
-  padding-top:13px;
-}
-details{
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:#FCFAF7;
-  overflow:hidden;
-}
-summary{
-  cursor:pointer;
-  padding:12px 13px;
-  font-weight:900;
-}
-.detail-inner{
-  padding:0 13px 13px;
-  font-size:13px;
-  color:#57504B;
-}
-
-.ask-box{
-  margin:14px 0 0;
-  padding:15px;
-  background:#F4EFEA;
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-.ask-box .ask-title{
-  display:block;
-  margin-bottom:8px;
-  font-size:13px;
-  font-weight:900;
-  color:#715E54;
-}
-.ask-box p{
-  margin:8px 0 0;
-  padding:10px 11px;
-  background:#fff;
-  border-radius:10px;
-  font-size:14px;
-  font-weight:800;
-  line-height:1.65;
-}
-.badge{
-  display:inline-block;
-  margin-top:9px;
-  padding:5px 9px;
-  border-radius:999px;
-  background:#E7EEE9;
-  color:#486052;
-  font-size:12px;
-  font-weight:900;
-}
-
-.official{margin-top:14px}
-.btn{
-  display:block;
-  width:100%;
-  text-decoration:none;
-  text-align:center;
-  padding:14px 12px;
-  background:var(--primary-strong);
-  color:#fff;
-  border-radius:11px;
-  font-weight:900;
-}
-.url{
-  display:block;
-  margin-top:8px;
-  font-size:11px;
-  line-height:1.45;
-  color:#80736B;
-  word-break:break-all;
-  overflow-wrap:anywhere;
-}
-
-.other{
-  margin:30px 0 0;
-  padding:16px 16px;
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:14px;
-}
-.other h3{margin:0 0 8px;font-size:16px}
-.other p{margin:0 0 10px;font-size:13px;color:#5F5752}
-.other a{color:var(--primary-strong);font-weight:800;word-break:break-all}
-
-.last{
-  margin-top:28px;
-  padding:18px 16px;
-  background:#6F5A50;
-  color:#fff;
-  border-radius:16px;
-}
-.last h2{margin:0 0 10px;font-size:20px}
+li{margin:3px 0}
+.details{margin:0;padding:7px 8px;border-top:1px solid #999}
+details{border:1px solid #777;border-radius:0;background:#fff;overflow:hidden}
+summary{cursor:pointer;min-height:42px;padding:8px 9px;border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #555;border-bottom:2px solid #555;background:var(--gray);color:var(--link);font-weight:700;text-decoration:underline}
+.detail-inner{padding:7px 9px 9px;color:#222;font-size:13px}
+.ask-box{margin:0;padding:8px;border-top:1px solid #999;border-radius:0;background:var(--yellow)}
+.ask-box .ask-title{display:block;margin-bottom:5px;color:var(--red);font-size:13px;font-weight:700}
+.ask-box p{margin:5px 0 0;padding:7px 8px;border:1px solid #999;border-radius:0;background:#fff;font-size:14px;font-weight:700;line-height:1.55}
+.badge{display:inline-block;margin-top:5px;padding:2px 5px;border:1px solid var(--red);border-radius:0;background:var(--yellow);color:var(--red);font-size:11px;font-weight:700}
+.official{margin:0;padding:8px;border-top:2px solid var(--blue);background:#f2f2f2}
+.btn{display:block;width:100%;min-height:44px;padding:9px 10px;border-top:2px solid #fff;border-left:2px solid #fff;border-right:2px solid #555;border-bottom:2px solid #555;border-radius:0;background:var(--gray);color:var(--link)!important;text-align:center;text-decoration:underline;font-weight:700}
+.btn:visited{color:var(--visited)!important}
+.btn:active{border-top-color:#555;border-left-color:#555;border-right-color:#fff;border-bottom-color:#fff}
+.url{display:block;margin-top:5px;color:#555;font-family:monospace;font-size:10px;line-height:1.4;word-break:break-all;overflow-wrap:anywhere}
+.other{margin:10px 0 0;padding:8px;border:2px solid var(--blue);border-radius:0;background:#fff}
+.other h3{margin:0 0 5px;padding:4px 6px;background:var(--pale-blue);color:var(--blue);font-size:15px}
+.other p{margin:0 0 7px;color:#000;font-size:13px}
+.other a{color:var(--link);font-weight:700;word-break:break-all}
+.last{margin-top:12px;padding:9px;border:2px solid var(--red);border-radius:0;background:var(--yellow);color:#000}
+.last h2{margin:0 0 6px;color:var(--red);font-size:19px}
 .last ol{margin:0;padding-left:1.35em}
-.last li{margin:7px 0}
-
-footer{
-  margin-top:25px;
-  font-size:12px;
-  color:#6F665F;
-}
-
-@media(max-width:520px){
-  .hero .wrap{padding-top:24px;padding-bottom:25px}
-  .card h2{font-size:22px}
-  .answer strong{font-size:20px}
-}
+.last li{margin:5px 0}
+footer{margin-top:14px;padding:8px 0;border-top:3px double var(--blue);color:#444;font-size:11px}
+@media(min-width:700px){.retro-top__inner,.wrap{width:min(100% - 40px,820px)}.menu{grid-template-columns:repeat(2,minmax(0,1fr))}.menu a{height:100%}}
+@media(max-width:520px){.answer,.who,.caution{grid-template-columns:82px minmax(0,1fr)}.small{padding:7px 5px}.answer strong,.answer ul,.who p,.who ul,.caution p{padding:7px 6px}.card h2{font-size:18px}.answer strong{font-size:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <a class="skip-link" href="#main">本文へ移動</a>
+<div class="retro-top"><div class="retro-top__inner"><a href="./">熊本支援まとめ</a> &gt; 現場・被災した会社</div></div>
 
 <section class="hero">
   <div class="wrap">
