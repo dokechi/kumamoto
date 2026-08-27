@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f4ef">
+  <meta name="theme-color" content="#003399">
   <link rel="icon" href="data:,">
   <meta name="description" content="2026年7月熊本地震の支援情報を、被災した住民、被災した会社、復旧・施工で来ている会社や現場の人に分けて案内します。">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="熊本の支援情報">
+  <meta property="og:title" content="熊本地震 支援情報まとめ">
   <meta property="og:description" content="被災した住民・会社と、復旧・施工で来ている人へ。">
   <meta property="og:url" content="https://dokechi.github.io/kumamoto/">
-  <title>熊本の支援情報</title>
+  <title>熊本地震 支援情報まとめ</title>
   <link rel="canonical" href="https://dokechi.github.io/kumamoto/">
   <script>
     // 以前の /kumamoto/#obstacle などの共有URLを壊さないため、
@@ -21,207 +21,314 @@
   </script>
   <style>
     :root{
-      --ink:#17191d;
-      --muted:#66645f;
-      --page:#fbfaf8;
-      --card:#fff;
-      --line:#dedbd6;
-      --mocha:#9c8578;
-      --mocha-soft:#f2ebe6;
-      --sage:#8fa193;
-      --sage-soft:#edf2ee;
+      --blue:#003399;
+      --link:#0000ee;
+      --visited:#551a8b;
+      --red:#d40000;
+      --yellow:#ffff99;
+      --pale-blue:#e6f3ff;
+      --gray:#d4d0c8;
+      --dark:#000;
+      --line:#666;
     }
+
     *{box-sizing:border-box}
     html{-webkit-text-size-adjust:100%}
     body{
       margin:0;
-      background:var(--page);
-      color:var(--ink);
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
-      -webkit-font-smoothing:antialiased;
-    }
-    a{color:inherit}
-    .skip-link{position:fixed;top:8px;left:8px;z-index:10;padding:10px 14px;border-radius:10px;background:#fff;color:var(--ink);font-weight:900;transform:translateY(-150%)}
-    .skip-link:focus{transform:translateY(0)}
-    .site-header{
-      height:66px;
-      display:flex;
-      align-items:center;
-      border-bottom:1px solid #e5e2dd;
-      background:rgba(255,255,255,.72);
-    }
-    .site-header__inner{
-      width:100%;
-      padding:0 28px;
-    }
-    .site-header__brand{
-      font-size:14px;
-      font-weight:850;
-      letter-spacing:-.02em;
-    }
-    main{
-      width:min(720px,calc(100% - 40px));
-      margin:0 auto;
-      padding:24px 0 74px;
-    }
-    .intro{
-      margin:0 0 20px;
-    }
-    .intro h1{
-      margin:0;
-      font-size:clamp(44px,4.3vw,64px);
-      line-height:1.02;
-      letter-spacing:-.055em;
-      font-weight:900;
-    }
-    .intro p{
-      margin:10px 0 0;
-      font-size:17px;
-      line-height:1.45;
-      font-weight:650;
-      letter-spacing:-.02em;
-    }
-    .choice-list{
-      display:grid;
-      gap:12px;
-    }
-    .choice{
-      position:relative;
-      display:flex;
-      align-items:center;
-      min-height:296px;
-      padding:42px 72px 42px 20px;
-      overflow:hidden;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:16px;
-      text-decoration:none;
-      transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
-    }
-    .choice::before{
-      content:"";
-      position:absolute;
-      inset:0 auto 0 0;
-      width:6px;
-      background:var(--accent);
-    }
-    .choice:hover{
-      transform:translateY(-1px);
-      border-color:#ccc6bf;
-      box-shadow:0 8px 24px rgba(68,56,48,.06);
-    }
-    .choice:focus-visible{
-      outline:3px solid rgba(156,133,120,.28);
-      outline-offset:3px;
-    }
-    .choice--work{--accent:var(--mocha);--accent-text:#6b5a51}
-    .choice--resident{--accent:var(--sage);--accent-text:#4d6053}
-    .choice__content{width:100%}
-    .choice__label{
-      display:block;
-      margin:0 0 8px;
-      color:var(--accent-text);
-      font-size:14px;
-      line-height:1;
-      font-weight:900;
-    }
-    .choice h2{
-      margin:0;
-      font-size:42px;
-      line-height:1.08;
-      letter-spacing:-.045em;
-      font-weight:900;
-    }
-    .choice p{
-      margin:12px 0 0;
+      background:#fff;
+      color:var(--dark);
+      font-family:"MS PGothic","MS Gothic",Meiryo,sans-serif;
       font-size:16px;
       line-height:1.55;
-      font-weight:620;
-      letter-spacing:-.015em;
+      overflow-wrap:anywhere;
     }
-    .choice__arrow{
-      position:absolute;
-      right:28px;
-      top:50%;
-      transform:translateY(-50%);
-      color:#5f6468;
-      font-family:Arial,sans-serif;
-      font-size:28px;
-      font-weight:400;
+
+    a{color:var(--link);text-decoration:underline}
+    a:visited{color:var(--visited)}
+    a:focus-visible{outline:3px solid #ff0;outline-offset:3px}
+
+    .skip-link{
+      position:fixed;
+      top:6px;
+      left:6px;
+      z-index:20;
+      padding:8px 10px;
+      border:2px solid #000;
+      background:#fff;
+      color:#000;
+      transform:translateY(-160%);
     }
+    .skip-link:focus{transform:none}
+
+    .site-header{
+      border-top:5px solid var(--blue);
+      border-bottom:2px solid var(--blue);
+      background:#fff;
+    }
+    .site-header__inner{
+      width:min(100% - 24px,760px);
+      margin:0 auto;
+      padding:8px 0 7px;
+    }
+    .site-header__brand{
+      color:var(--blue);
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .ticker{
+      overflow:hidden;
+      border-bottom:2px solid var(--red);
+      background:var(--yellow);
+      color:var(--red);
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .ticker__track{
+      display:inline-block;
+      min-width:max-content;
+      padding:5px 0;
+      animation:retro-scroll 16s linear infinite;
+    }
+    @keyframes retro-scroll{
+      from{transform:translateX(100vw)}
+      to{transform:translateX(-100%)}
+    }
+
+    main{
+      width:min(100% - 24px,760px);
+      margin:0 auto;
+      padding:12px 0 42px;
+    }
+
+    .intro{
+      border:2px solid var(--blue);
+      background:#fff;
+    }
+    .intro__titlebar{
+      padding:6px 8px;
+      background:var(--blue);
+      color:#fff;
+      text-align:center;
+      font-weight:700;
+    }
+    .intro__body{padding:11px 10px 12px}
+    .intro h1{
+      margin:0;
+      color:var(--blue);
+      font-size:clamp(24px,7.2vw,34px);
+      line-height:1.28;
+      text-align:center;
+      font-weight:700;
+    }
+    .update-line{
+      margin:7px 0 0;
+      text-align:center;
+      font-size:13px;
+    }
+    .new{
+      margin-right:5px;
+      color:var(--red);
+      font-weight:700;
+    }
+
+    .important-box{
+      margin:10px 0 12px;
+      padding:9px 10px;
+      border:2px solid var(--red);
+      background:var(--yellow);
+      color:#000;
+    }
+    .important-box strong{
+      display:block;
+      margin-bottom:3px;
+      color:var(--red);
+      font-size:17px;
+    }
+
+    .section-title{
+      margin:14px 0 7px;
+      padding:5px 7px;
+      border-left:8px solid var(--blue);
+      border-bottom:1px solid var(--blue);
+      color:var(--blue);
+      font-size:19px;
+      font-weight:700;
+    }
+    .section-lead{
+      margin:0 0 9px;
+      font-size:14px;
+    }
+
+    .choice-list{
+      display:grid;
+      gap:10px;
+    }
+    .choice{
+      display:block;
+      border:2px solid var(--blue);
+      background:#fff;
+      color:#000;
+      text-decoration:none;
+    }
+    .choice:visited{color:#000}
+    .choice__label{
+      display:block;
+      padding:5px 8px;
+      background:var(--pale-blue);
+      border-bottom:1px solid var(--blue);
+      color:var(--blue);
+      font-size:14px;
+      font-weight:700;
+    }
+    .choice__body{padding:11px 10px 12px}
+    .choice h2{
+      margin:0;
+      color:#000;
+      font-size:22px;
+      line-height:1.3;
+    }
+    .choice p{
+      margin:6px 0 0;
+      font-size:15px;
+    }
+    .choice__go{
+      display:block;
+      min-height:44px;
+      margin-top:10px;
+      padding:9px 10px;
+      border-top:2px solid #fff;
+      border-left:2px solid #fff;
+      border-right:2px solid #555;
+      border-bottom:2px solid #555;
+      background:var(--gray);
+      color:var(--link);
+      text-align:center;
+      text-decoration:underline;
+      font-weight:700;
+    }
+    .choice:active .choice__go{
+      border-top-color:#555;
+      border-left-color:#555;
+      border-right-color:#fff;
+      border-bottom-color:#fff;
+    }
+
+    .mini-index{
+      margin:12px 0 0;
+      border:1px solid var(--line);
+      border-collapse:collapse;
+      width:100%;
+      font-size:13px;
+    }
+    .mini-index th,
+    .mini-index td{
+      padding:6px 7px;
+      border:1px solid var(--line);
+      vertical-align:top;
+    }
+    .mini-index th{
+      width:86px;
+      background:var(--pale-blue);
+      color:var(--blue);
+      text-align:left;
+    }
+
     .page-note{
-      margin:20px 2px 0;
-      color:var(--muted);
+      margin:14px 0 0;
+      padding:8px 9px;
+      border-top:1px dashed #777;
+      border-bottom:1px dashed #777;
       font-size:12px;
-      line-height:1.7;
+      line-height:1.6;
     }
-    @media(max-width:600px){
-      .site-header{height:56px}
-      .site-header__inner{padding:0 18px}
-      main{
-        width:min(100% - 28px,720px);
-        padding-top:28px;
-        padding-bottom:52px;
-      }
-      .intro{margin-bottom:18px}
-      .intro h1{
-        font-size:42px;
-        line-height:1.04;
-      }
-      .intro p{
-        margin-top:9px;
-        font-size:15px;
-      }
-      .choice-list{gap:10px}
-      .choice{
-        min-height:224px;
-        padding:32px 52px 32px 18px;
-        border-radius:14px;
-      }
-      .choice::before{width:5px}
-      .choice__label{font-size:13px;margin-bottom:8px}
-      .choice h2{font-size:34px}
-      .choice p{font-size:14px;line-height:1.55}
-      .choice__arrow{right:18px;font-size:25px}
+
+    .footer{
+      width:min(100% - 24px,760px);
+      margin:0 auto;
+      padding:10px 0 24px;
+      border-top:3px double var(--blue);
+      color:#555;
+      font-size:11px;
+      text-align:center;
     }
-    @media(prefers-reduced-motion:reduce){.choice{transition:none}}
+
+    @media(min-width:700px){
+      .site-header__inner,main,.footer{width:min(100% - 40px,820px)}
+      .choice-list{grid-template-columns:1fr 1fr}
+      .choice{height:100%}
+      .choice__body{display:flex;min-height:210px;flex-direction:column}
+      .choice__go{margin-top:auto}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      .ticker__track{animation:none;padding-left:8px;white-space:normal}
+      .ticker{white-space:normal}
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
+
   <header class="site-header">
     <div class="site-header__inner">
-      <div class="site-header__brand">熊本支援まとめ</div>
+      <div class="site-header__brand">熊本支援まとめ　&gt; トップページ</div>
     </div>
   </header>
 
+  <div class="ticker" role="note" aria-label="重要なお知らせ">
+    <div class="ticker__track">【重要】修理・契約・支払いをする前に！！　使える支援がないか先に確認してください　　★ 熊本地震 支援情報まとめ ★</div>
+  </div>
+
   <main id="main">
     <section class="intro" aria-labelledby="page-title">
-      <h1 id="page-title">熊本の支援情報、</h1>
-      <p>被災した住民・会社と、<br>復旧・施工で来ている人。</p>
+      <div class="intro__titlebar">■■ 熊本地震 支援情報 ■■</div>
+      <div class="intro__body">
+        <h1 id="page-title">★ 熊本地震 支援情報まとめ ★</h1>
+        <p class="update-line"><span class="new">NEW!!</span>最終更新：2026年8月27日</p>
+      </div>
     </section>
 
+    <aside class="important-box">
+      <strong>【重要】先に確認してください</strong>
+      修理・契約・支払いを進める前に、使える支援がないか確認してください。制度によっては、先に支払うと対象外になる場合があります。
+    </aside>
+
+    <h2 class="section-title">■ あなたの状況を選んでください</h2>
+    <p class="section-lead">制度名が分からなくても大丈夫です。近い方を押してください。</p>
+
     <nav class="choice-list" aria-label="支援情報を立場から選ぶ">
-      <a class="choice choice--resident" href="./resident.html">
-        <div class="choice__content">
-          <span class="choice__label">被災者支援</span>
-          <h2>現地住民の人</h2>
-          <p>熊本で暮らしている被災した人向け。<br>家の修理、仮住まい、生活の支援を見る。</p>
+      <a class="choice" href="./resident.html">
+        <span class="choice__label">■ 被災者支援</span>
+        <div class="choice__body">
+          <h2>被災された住民の方</h2>
+          <p>家の修理、仮住まい、片付け、生活支援、料金の減免などを確認できます。</p>
+          <span class="choice__go">&gt;&gt; 住民向け支援情報を見る</span>
         </div>
-        <span class="choice__arrow" aria-hidden="true">›</span>
       </a>
 
-      <a class="choice choice--work" href="./genba.html">
-        <div class="choice__content">
-          <span class="choice__label">復旧・事業者支援</span>
-          <h2>現場・被災した会社</h2>
-          <p>熊本へ応援に来ている会社・職人と、被災した事業者向け。<br>高速代、宿泊・移動費、融資、片付けなどを見る。</p>
+      <a class="choice" href="./genba.html">
+        <span class="choice__label">■ 復旧・事業者支援</span>
+        <div class="choice__body">
+          <h2>現場・被災した会社の方</h2>
+          <p>高速代、宿泊・移動費、融資、片付け、復旧工事に関係する情報を確認できます。</p>
+          <span class="choice__go">&gt;&gt; 現場・会社向け支援情報を見る</span>
         </div>
-        <span class="choice__arrow" aria-hidden="true">›</span>
       </a>
     </nav>
 
-    <p class="page-note">非公式のまとめです。制度の条件・受付状況は、各ページから公式情報を確認してください。</p>
+    <table class="mini-index" aria-label="このサイトの使い方">
+      <tbody>
+        <tr><th>住民の方</th><td>家・生活・支払いなど、今困っていることから探せます。</td></tr>
+        <tr><th>現場の方</th><td>復旧工事・会社負担・被災事業所に関する情報を確認できます。</td></tr>
+        <tr><th>公式確認</th><td>各制度の詳細ページから熊本市などの公式情報へ進めます。</td></tr>
+      </tbody>
+    </table>
+
+    <p class="page-note"><b>※このページは非公式のまとめです。</b> 制度の条件・受付状況・必要書類は変更される場合があります。最終的な条件は、各ページから公式情報を確認してください。</p>
   </main>
+
+  <footer class="footer">熊本地震 支援情報まとめ / 非公式</footer>
 </body>
 </html>
