@@ -2,7 +2,7 @@ name: Deploy static site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "feat/command-center-retro"]
   workflow_dispatch:
 
 permissions:
